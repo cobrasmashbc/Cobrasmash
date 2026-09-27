@@ -1,12 +1,12 @@
 # CobraSmash Development Roadmap
 
-**Phase 0: Infrastructure & Automation (Current)**
+**Phase 0: Infrastructure & Automation (Done)**
 - [x] Analyze codebase and Cloudflare Pages requirements (static site, no build step needed).
-- [ ] Connect GitHub repository natively to Cloudflare Pages (framework preset: None, build command: empty, build output directory: `public`).
-- [ ] Point `cobrasmash.org.uk` at the Pages project.
-- [ ] Verify automatic deploys on push to `main` (JSON/image content updates go live without manual steps).
+- [x] Connect GitHub repository natively to Cloudflare Pages (framework preset: None, build command: empty, build output directory: `public`).
+- [x] Point `cobrasmash.org.uk` at the Pages project.
+- [x] Verify automatic deploys on push to `main` (JSON/image content updates go live without manual steps).
 
-**Phase 1: Content & Social Syndication**
+**Phase 1: Content & Social Syndication (Next)**
 - [ ] Implement Markdown/CMS-based Blog architecture.
 - [ ] Integrate Meta Graph API (or Zapier/Make) to auto-publish "Latest Buzz" to Facebook and Instagram.
 
