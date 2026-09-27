@@ -8,12 +8,16 @@
 
 ## Core operating rules
 
-1. **Issue-driven development:** every task, fix or feature has a GitHub Issue on the CobraSmash project board before work begins.
+1. **Issue-driven development:** every task, fix or feature has a GitHub Issue on the CobraSmash project board before work begins, except routine content updates (rule 5).
 2. **Backlog and history:**
    - New tasks go into **Todo**.
    - Previously completed work gets a retroactive issue, added to the board and moved straight to **Done**, for auditability.
 3. **Guardrails:** keep implementations lean. No frameworks, bundlers, `package.json`, heavy abstractions, third-party libraries or extra process until explicitly required (see `roadmap.md`).
 4. **Outward-facing actions** (creating or editing issues, moving board items, pushing, opening or merging PRs) are shown first and run only after the user confirms.
+5. **Routine content updates skip the loop.** Simple, straightforward edits to the JSON files in `public/data/` (next session date, news posts, slider slides, testimonials, player entries), plus any images they reference in `public/assets/images/`, go straight to `main` with no issue, branch or PR:
+   - Keep to the existing fields and format; validate the JSON before committing.
+   - Commit with a clear message (e.g. `Content: next session 30 Sep 2026`), push after the user confirms, then check the change on cobrasmash.org.uk once Cloudflare has deployed.
+   - Anything else goes through the full loop: code, HTML/CSS/JS, new JSON fields or files, or a content change that adds personal or confidential data beyond what's already published (see `CLAUDE.md`).
 
 ---
 
