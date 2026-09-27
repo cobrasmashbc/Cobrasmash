@@ -1,15 +1,17 @@
 # Instructions for all web crawlers
 User-agent: *
 
-# Allow crawlers full access to the main page and essential assets
+# Allow full access, including CSS, JS and data, so search engines can
+# render the page the way visitors see it (news, team and testimonials
+# are loaded from /data/ by JavaScript).
 Allow: /
-Allow: /assets/images/
 
-# Disallow crawling of structural, style, script, and data folders
-# This focuses crawl budget on content and prevents indexing of non-page assets.
-Disallow: /assets/css/
-Disallow: /assets/js/
-Disallow: /data/
+# Keep member, news and slider photos out of Google Images. Googlebot can
+# still load them to render the page; the logo and icons stay indexable.
+User-agent: Googlebot-Image
+Disallow: /assets/images/players/
+Disallow: /assets/images/news/
+Disallow: /assets/images/slider/
 
 # Point all crawlers to the sitemap for a list of important pages
 Sitemap: https://cobrasmash.org.uk/sitemap.xml

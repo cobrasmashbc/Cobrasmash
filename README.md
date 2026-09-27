@@ -23,6 +23,7 @@
 │   ├── data/                     # JSON files powering dynamic content
 │   ├── site.webmanifest          # PWA and web app support
 │   ├── robots.txt, sitemap.xml   # SEO and web crawling configuration
+│   ├── _headers                  # Cloudflare Pages response headers (not served as a file)
 │   ├── favicon.ico               # Favicon
 │   ├── BingSiteAuth.xml          # Bing site verification
 │   └── browserconfig.xml         # Microsoft tile configuration
@@ -102,7 +103,8 @@ Modular JS components like `contentLoader.js` and `heroSlider.js` fetch and disp
 The site is hosted on **Cloudflare Pages**, connected to this repo, with no build command and `public` as the output directory.
 
 * A push to `main` goes live on [cobrasmash.org.uk](https://cobrasmash.org.uk/).
-* Any other pushed branch gets its own preview at `https://<branch-name>.cobrasmash.pages.dev`, with `/` in the branch name replaced by `-`.
+* Any other pushed branch gets its own preview at `https://<branch-name>.cobrasmash.pages.dev`, with `/` in the branch name replaced by `-`. Cloudflare marks previews `noindex` so they stay out of search engines.
+* `public/_headers` sets response headers on Cloudflare: basic security headers everywhere, and `X-Robots-Tag: noindex` on `/data/` and member, news and slider photos so they stay out of search results. `robots.txt` also keeps those photos out of Google Images.
 
 ---
 

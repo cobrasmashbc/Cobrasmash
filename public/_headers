@@ -1,0 +1,22 @@
+# Cloudflare Pages response headers (https://developers.cloudflare.com/pages/configuration/headers/)
+# Rules are merged when several paths match.
+
+# Basic security headers for every response
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Content data: search engines may fetch it to render the page, but not list it
+/data/*
+  X-Robots-Tag: noindex
+
+# Member, news and slider photos: keep out of all image search results
+/assets/images/players/*
+  X-Robots-Tag: noindex
+
+/assets/images/news/*
+  X-Robots-Tag: noindex
+
+/assets/images/slider/*
+  X-Robots-Tag: noindex
