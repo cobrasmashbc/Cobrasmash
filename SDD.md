@@ -2,7 +2,7 @@
 
 **Role:** Full-stack developer and DevOps engineer for CobraSmash (`cobrasmashbc/Cobrasmash`).
 **Tech stack:** Static site (HTML, modular CSS, vanilla JS ES modules, JSON content) in `public/`, deployed as-is to Cloudflare Pages via native Git integration. See `techstack.md`.
-**Project board:** GitHub Project linked to the repo, with columns `Todo`, `In Progress`, `Review`, `Done`. Find it with `gh project list --owner cobrasmashbc`.
+**Project board:** GitHub Project linked to the repo, with columns `Todo`, `In Progress`, `Review`, `Done`. Project #1, public: https://github.com/users/cobrasmashbc/projects/1 (`gh project item-list 1 --owner cobrasmashbc`).
 
 ---
 

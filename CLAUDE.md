@@ -8,7 +8,9 @@ Static, single-page website for Cobra Smash Badminton Club (https://cobrasmash.o
 
 Project direction lives in `mission.md` (goals), `roadmap.md` (phased plan) and `techstack.md` (current vs. possible future stack). The site stays static for now and is deployed as-is to Cloudflare Pages project `cobrasmash` via Git integration (no build command, build output directory `public`): every push to `main` goes live on cobrasmash.org.uk, and any other pushed branch gets a preview at `https://<branch-name-with-dashes>.cobrasmash.pages.dev`. Everything under `public/` is served at the site root; nothing outside it is deployed, so docs and project notes stay at the repo root. Don't introduce a framework, bundler or `package.json` unless the roadmap calls for it.
 
-Work follows the issue-driven loop in `SDD.md` (`/orient` → `/propose` → `/spec` → `/build` → `/validate` → `/document` → `/ship`, defined in `.claude/commands/`). Run only the step requested, and confirm with the user before any outward-facing action (issues, board moves, push, PR, merge).
+Work follows the issue-driven loop in `SDD.md` (`/orient` → `/propose` → `/spec` → `/build` → `/validate` → `/document` → `/ship`, defined in `.claude/commands/`). Run only the step requested, and confirm with the user before any outward-facing action (issues, board moves, push, PR, merge). The board is the public GitHub Project #1 owned by `cobrasmashbc` (https://github.com/users/cobrasmashbc/projects/1).
+
+`LICENSE` is custom: code is reusable with visible credit (Part A), while club content and personal data are all rights reserved (Part B: `public/assets/images/`, `public/data/`, branding, contact details, club text). If a change adds a new place for club content or member data (e.g. blog posts), add it to Part B and the README's License summary.
 
 ## Running locally
 

@@ -1,0 +1,76 @@
+Cobra Smash Website License
+
+Copyright (c) 2025 Srikanth Gedela and Cobra Smash Badminton Club
+
+This repository contains two kinds of material, covered by different terms:
+(A) source code, which you may reuse with credit, and (B) club content and
+personal data, which you may not reuse.
+
+-------------------------------------------------------------------------------
+PART A - SOURCE CODE (reusable with credit)
+-------------------------------------------------------------------------------
+
+"Source Code" means the HTML markup and structure, CSS, JavaScript, and the
+project's documentation and workflow files (such as README.md, SDD.md,
+CLAUDE.md and the files in .claude/), excluding everything listed in Part B.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of the Source Code, to use, copy, modify, merge, publish, distribute,
+sublicense, and/or sell copies of it, and to permit persons to whom it is
+furnished to do so, subject to the following conditions:
+
+1. The above copyright notice and this license shall be included in all copies
+   or substantial portions of the Source Code.
+
+2. Any website, application or other work that uses or is derived from the
+   Source Code must display a visible credit in a place where users of that
+   work can reasonably see it (for example the site footer or an "About" or
+   credits page), in the following form or a close equivalent:
+
+     Based on the Cobra Smash website by Srikanth Gedela
+     (https://github.com/cobrasmashbc/Cobrasmash)
+
+3. You must not imply that your work is made, endorsed or operated by
+   Cobra Smash Badminton Club or Srikanth Gedela.
+
+-------------------------------------------------------------------------------
+PART B - CLUB CONTENT AND PERSONAL DATA (all rights reserved)
+-------------------------------------------------------------------------------
+
+The following are NOT licensed under Part A. All rights are reserved, and they
+may not be copied, reused, modified or redistributed without prior written
+permission from Cobra Smash Badminton Club:
+
+1. All images and graphics, including everything in public/assets/images/
+   (player photos, match and event graphics, the club logo and all icons and
+   favicons derived from it).
+
+2. All content data, including everything in public/data/ (player names,
+   nicknames, roles and photo references, testimonials, news and slider
+   content). This includes personal data of club members, which must not be
+   collected, reused or republished.
+
+3. The club's name, logo and branding, including "Cobra Smash", "Cobra Smash
+   Badminton Club" and "Cobras" as used to identify the club.
+
+4. The club's contact details, including its email addresses, phone numbers
+   and social media accounts.
+
+5. The club's written text in public/index.html and elsewhere, including the
+   club story, ambitions, session details, FAQ answers, sponsorship text and
+   page metadata describing the club.
+
+Anyone reusing the Source Code must remove or replace all Part B material
+with their own.
+
+-------------------------------------------------------------------------------
+DISCLAIMER
+-------------------------------------------------------------------------------
+
+THE SOURCE CODE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOURCE CODE OR THE USE OR OTHER DEALINGS IN
+THE SOURCE CODE.

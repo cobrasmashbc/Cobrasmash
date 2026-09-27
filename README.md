@@ -1,18 +1,12 @@
-The entire CobraSmash website was designed and developed by Srikanth Gedela using the Vibe Coding.
-For project inquiries, collaboration, or technical details, feel free to get in touch.
-
----
-
-````markdown
 # 🐍 CobraSmash
 
-**CobraSmash** is a modern, fast-loading, and fully responsive website designed for a badminton community, featuring player profiles, news updates, dynamic sliders, and more. Built with a focus on clean code structure and modularity, this site is easy to maintain and extend.
+**CobraSmash** is the website of Cobra Smash Badminton Club, a friendly, non-profit club for intermediate to advanced players in Milton Keynes. It's a fast, fully responsive single-page site featuring the latest club news, player profiles, a hero slider, FAQs and ways to join or sponsor the club. It's built as a static site with modular code and JSON-driven content, so it's easy to maintain and extend.
 
 ---
 
 ## 🌐 Live Site
 
-> [Coming Soon](#) — The site will be hosted shortly. Stay tuned!
+👉 **[cobrasmash.org.uk](https://cobrasmash.org.uk/)**
 
 ---
 
@@ -32,53 +26,53 @@ For project inquiries, collaboration, or technical details, feel free to get in 
 │   ├── favicon.ico               # Favicon
 │   ├── BingSiteAuth.xml          # Bing site verification
 │   └── browserconfig.xml         # Microsoft tile configuration
+├── .claude/commands/             # Slash commands for the SDD workflow (not deployed)
 ├── mission.md, roadmap.md, techstack.md   # Project direction (not deployed)
+├── SDD.md                        # Spec-driven development workflow (not deployed)
 ├── CLAUDE.md                     # Guidance for Claude Code (not deployed)
+├── LICENSE                       # License terms (not deployed)
 └── README.md                     # Project documentation
-````
+```
 
 ---
 
 ## 🧰 Technologies Used
 
 * **HTML5**
-* **Modular CSS** (custom component-based SCSS-like structure)
-* **Vanilla JavaScript** (modular pattern with `js/modules`)
+* **Modular CSS** (component-based partials imported by `main.css`)
+* **Vanilla JavaScript** (ES modules in `assets/js/modules`)
 * **JSON Data Files** (for dynamic content injection)
 * **WebP Format** (optimized images for speed)
-* **SEO Essentials**: `sitemap.xml`, `robots.txt`, `manifest`, `browserconfig.xml`
+* **SEO Essentials**: meta and social preview tags, structured data, `sitemap.xml`, `robots.txt`, `site.webmanifest`, `browserconfig.xml`
+* **Cloudflare Pages** for hosting, with no build step
 
 ---
 
 ## ✨ Key Features
 
-* 🖼️ **Dynamic Hero Slider** — Smooth and customizable image carousel.
-* 📰 **News Module** — Renders latest events and news from `news.json`.
-* 🧑‍🤝‍🧑 **Player Profiles** — Gallery of members with image and details.
-* 📱 **Responsive Design** — Fully mobile-ready with custom breakpoints.
-* ⚡ **Fast Loading** — Optimized assets and clean, performant scripts.
-* 🔗 **SEO-Friendly** — Includes manifest, robot rules, and sitemaps.
+* 🖼️ **Dynamic Hero Slider**: autoplaying image carousel with lazy-loaded slides.
+* 📰 **Latest Buzz**: flip-card news and match results from `news.json`, with an image lightbox.
+* 🧑‍🤝‍🧑 **Meet the Cobras**: Cobra Council and Strike Squad player profiles.
+* 💬 **Member Testimonials**: a scrolling marquee of what members say.
+* ❓ **FAQ, sponsorship tiers and Join Us**: guest-session requests and enquiries by pre-filled email.
+* 📱 **Responsive Design**: mobile menu and layouts for phones and tablets.
+* ⚡ **Fast Loading**: optimized assets and lean, performant scripts.
+* 🔗 **SEO-Friendly**: social previews, structured data, sitemap and robots rules.
+
+The full feature history is tracked as issues on the [CobraSmash project board](https://github.com/users/cobrasmashbc/projects/1).
 
 ---
 
 ## 🚀 Getting Started
 
-Clone this repo and open it in your browser:
+Clone this repo:
 
 ```bash
-git clone https://github.com/cobrasmashbc/cobrasmash.git
-cd cobrasmash
+git clone https://github.com/cobrasmashbc/Cobrasmash.git
+cd Cobrasmash
 ```
 
-You can open `index.html` directly in a browser, or use a local server (recommended for JS modules):
-
-### Option 1: Open in browser (no module support)
-
-* Drag and drop `index.html` into Chrome or Edge (not Firefox, due to module CORS issues)
-
-### Option 2: Use a local dev server
-
-Install [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in VS Code or run:
+The site loads its content with JavaScript modules and `fetch()`, so it must be served over HTTP from the `public/` folder. Opening `index.html` directly from disk won't load the content. Run a local server, or use [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in VS Code with `public/` as the root:
 
 ```bash
 npx serve public
@@ -92,61 +86,70 @@ Then navigate to `http://localhost:8000` (or whichever port is shown).
 
 ## 🗃️ Data-Driven Architecture
 
-Data is dynamically loaded from the `/data/` folder:
+Content is loaded at runtime from the `public/data/` folder:
 
-* `news.json` — Articles and latest events.
-* `players.json` — Club member profiles.
-* `slider.json` — Hero slider image/content.
-* `testimonials-latest.json` — Testimonials display.
+* `news.json`: Latest Buzz articles and events.
+* `players.json`: Club member profiles.
+* `slider.json`: Hero slider images and content.
+* `testimonials-latest.json`: Member testimonials.
 
-Modular JS components like `contentLoader.js` and `heroSlider.js` fetch and display this data seamlessly.
+Modular JS components like `contentLoader.js` and `heroSlider.js` fetch and display this data. To update content, edit the relevant JSON files and images; no back end is required.
 
 ---
 
-## 🛠️ Development Tips
+## ☁️ Deployment
 
-```bash
-# Common Git workflow
-git add .
-git commit -m "Describe your changes"
-git pull --rebase origin main
-git push origin main
-```
+The site is hosted on **Cloudflare Pages**, connected to this repo, with no build command and `public` as the output directory.
 
-To update content, edit the relevant JSON files and assets — no back-end required.
+* A push to `main` goes live on [cobrasmash.org.uk](https://cobrasmash.org.uk/).
+* Any other pushed branch gets its own preview at `https://<branch-name>.cobrasmash.pages.dev`, with `/` in the branch name replaced by `-`.
+
+---
+
+## 🛠️ How We Work
+
+Changes follow an issue-driven, spec-driven workflow:
+
+1. Every change starts as an issue on the [CobraSmash project board](https://github.com/users/cobrasmashbc/projects/1).
+2. Work happens on a `feature/<name>` branch and is checked on its Cloudflare Pages preview.
+3. It's merged to `main` through a pull request, which deploys it.
+
+See:
+
+* [`SDD.md`](SDD.md): the workflow steps (`/orient` → `/propose` → `/spec` → `/build` → `/validate` → `/document` → `/ship`).
+* [`roadmap.md`](roadmap.md), [`mission.md`](mission.md), [`techstack.md`](techstack.md): where the project is going.
+* [`CLAUDE.md`](CLAUDE.md): guidance for working on this repo with Claude Code.
 
 ---
 
 ## 🔒 License
 
-This project is licensed under the MIT License © [cobrasmashbc](https://github.com/cobrasmashbc)
+© 2025 Srikanth Gedela and Cobra Smash Badminton Club. This project uses a custom license; see [`LICENSE`](LICENSE) for the full terms. In summary:
+
+* **The code** (HTML structure, CSS, JavaScript and docs) may be reused, modified and shared, **provided a visible credit is included** in your site or app (see Credits below).
+* **Club content and personal data are excluded, with all rights reserved.** Nothing here may be reused without the club's written permission: photos and graphics in `public/assets/images/`, content and member data in `public/data/`, the club's name, logo and branding, its contact details, and its written text. Replace all of it with your own.
 
 ---
 
 ## 🙌 Contributions
 
-This is a community-driven project! Contributions, suggestions, and pull requests are welcome.
+Suggestions and pull requests are welcome. Please open an issue first so the change can be tracked on the project board.
 
 ---
 
 ## 📬 Contact
 
-Reach out via GitHub:
-
-* [@cobrasmashbc](https://github.com/cobrasmashbc)
-
-```
+* Email: [info@cobrasmash.org.uk](mailto:info@cobrasmash.org.uk)
+* Instagram: [@cobrasmashmk](https://www.instagram.com/cobrasmashmk)
+* Facebook: [cobrasmashmk](https://www.facebook.com/cobrasmashmk)
+* GitHub: [@cobrasmashbc](https://github.com/cobrasmashbc)
 
 ---
 
-### ✅ Suggestions to Improve the Repo Further
+## 🏆 Credits
 
-| Area        | Suggestion |
-|-------------|------------|
-| **README**  | Add screenshots or a preview GIF to enhance presentation. |
-| **Assets**  | Include lazy loading for images for better performance. |
-| **Codebase**| Add comments in JS modules to document functionality. |
-| **Hosting** | Consider deploying via GitHub Pages or Netlify. |
+Built by **Srikanth Gedela** with AI-assisted, spec-driven development.
 
-Would you like me to generate badges (e.g., GitHub stars, last commit, license) for the top of this README?
-```
+If you reuse the code, include this credit where users can see it:
+
+> Based on the Cobra Smash website by Srikanth Gedela (https://github.com/cobrasmashbc/Cobrasmash)
