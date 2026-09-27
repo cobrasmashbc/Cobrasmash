@@ -1,6 +1,20 @@
 {
   "slides": [
     {
+  "id": "slide-mkdba-league-8",
+  "backgroundImage": "assets/images/slider/CSAvsBuckinghamASep20.webp",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br>",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-09-20",
+  "duration": 10000,
+  "expandable": true
+},
+    {
   "id": "slide-15point-scoring",
   "backgroundImage": "assets/images/slider/15pointsystem.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
