@@ -1,0 +1,152 @@
+/* --- Footer --- */
+footer {
+    background: var(--color-black-base);
+    color: var(--color-text-medium);
+    padding: 4rem 1.5rem 2rem;
+    margin-top: 2.5rem;
+}
+
+.footer-main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    max-width: 1160px;
+    margin: 0 auto 3rem auto;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex-basis: 45%;
+    flex-grow: 1;
+    min-width: 280px;
+}
+
+.footer-column h3 {
+    font-family: var(--font-primary); 
+    color: var(--color-white);
+    font-size: 1.6rem; 
+    margin-bottom: 1.5rem; 
+    font-weight: 500;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+.footer-column p, 
+.footer-column ul li a, 
+.footer-email {
+    font-family: var(--font-body); 
+    color: var(--color-text-medium);
+    font-size: 0.95rem; 
+    line-height: 1.7;
+}
+
+.footer-column ul { 
+    list-style: none; 
+    padding: 0; 
+}
+
+.footer-column ul li { 
+    margin-bottom: 0.8rem; 
+}
+
+.footer-column ul li a { 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+.footer-column ul li a:hover { 
+    color: var(--color-cobra-yellow); 
+}
+
+.footer-socials { 
+    display: flex; 
+    gap: 1.5rem; 
+    margin: 1.25rem 0; 
+}
+
+.footer-socials a { 
+    color: var(--color-white); 
+    font-size: 1.6rem; 
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.footer-socials a:hover { 
+    color: var(--color-cobra-yellow); 
+    transform: scale(1.1); 
+}
+
+.footer-bottom {
+    border-top: 1px solid #333; 
+    padding-top: 2rem; 
+    text-align: center;
+    max-width: 1160px; 
+    margin: 0 auto; 
+    font-size: 0.85rem; 
+    color: var(--color-text-medium);
+}
+
+.footer-bottom p { 
+    margin: 0; 
+}
+
+.footer-bottom a { 
+    color: var(--color-text-medium); 
+    text-decoration: none; 
+    padding: 0 0.5rem; 
+    transition: color 0.3s ease; 
+}
+
+.footer-bottom a:hover { 
+    color: var(--color-white); 
+}
+
+
+
+    .footer-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Allows links to wrap onto the next line on small screens */
+        gap: 8px; /* Provides space for wrapped items */
+    }
+
+    .footer-nav li {
+        position: relative;
+        padding: 0 15px; /* Creates space around the link text */
+    }
+
+    /* Adds the vertical bar separator before each list item, except the first one */
+    .footer-nav li + li::before {
+        content: '|';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #ffffff;
+    }
+
+    .footer-nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .footer-nav a:hover {
+        text-decoration: underline;
+    }
+
+/* --- Responsive Footer --- */
+@media (max-width: 768px) {
+    .footer-main-content { 
+        flex-direction: column; 
+        gap: 3rem; 
+    }
+    .footer-column { 
+        text-align: center; 
+    }
+    .footer-socials { 
+        justify-content: center; 
+    }
+}

@@ -1,0 +1,248 @@
+{
+  "slides": [
+    {
+  "id": "slide-15point-scoring",
+  "backgroundImage": "assets/images/slider/15pointsystem.webp",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br>",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-06-03",
+  "duration": 6000,
+  "expandable": true
+},
+{
+  "id": "slide-cobra-elections",
+  "backgroundImage": "assets/images/slider/CobraElections.webp",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br>",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-06-01",
+  "duration": 6000,
+  "expandable": true
+},
+    {
+  "id": "slide-mkdba-league-7",
+  "backgroundImage": "assets/images/slider/CSvsPhoenixMay17.gif",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br>",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-05-17",
+  "duration": 8000,
+  "expandable": true
+},
+    {
+  "id": "slide-mkdba-league-6",
+  "backgroundImage": "assets/images/slider/CSvsBF_Apr26.gif",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br>",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-04-26",
+  "duration": 8000,
+  "expandable": true
+},
+{
+  "id": "slide-mkdba-league-5",
+  "backgroundImage": "assets/images/slider/vsWoughtonMar23.gif",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br>",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-03-23",
+  "duration": 8000,
+  "expandable": true
+},   
+{
+  "id": "slide-mkdba-league-4",
+  "backgroundImage": "assets/images/slider/vsPhoenixMar01.gif",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br>",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-03-01",
+  "duration": 8000,
+  "expandable": true
+},
+{
+  "id": "slide-mkdba-league-3",
+  "backgroundImage": "assets/images/slider/vsGreylingsFeb16.gif",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br>",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-02-16",
+  "duration": 8000,
+  "expandable": true
+},
+
+{
+  "id": "slide-mkdba-league-2",
+  "backgroundImage": "assets/images/slider/vsHarlingtonFeb12.gif",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br>",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-02-12",
+  "duration": 8000,
+  "expandable": true
+},
+
+ {
+  "id": "slide-mkdba-league-1",
+  "backgroundImage": "assets/images/slider/vsGreylingsFeb01.gif",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br>",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-02-01",
+  "duration": 8000,
+  "expandable": true
+},
+{
+  "id": "slide-mkdba-league",
+  "backgroundImage": "assets/images/slider/CSvsHar-Vic.gif",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": " <br><br> ",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-01-18",
+  "duration": 8000,
+  "expandable": true
+}
+,
+{
+  "id": "slide-mkdba-league-2",
+  "backgroundImage": "assets/images/slider/CSVictorySep28.gif",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br> ",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2025-09-28",
+  "duration": 8000,
+  "expandable": true
+}
+,
+ 
+
+   {
+  "id": "slide-mkdba-league",
+  "backgroundImage": "assets/images/slider/CSvsBandits-Vic-Min.gif",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": " <br><br> ",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2025-09-14",
+  "duration": 8000,
+  "expandable": true
+}
+,
+    {
+  "id": "slide-social",
+  "backgroundImage": "/assets/images/slider/enfes-social.webp",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0.65)",
+  "title": "Cobra Smash <br>Social Dinner @ Enfes!",
+  "text": "🎊 We celebrated the first-ever Cobra Smash Social! <br>📍 <strong>Enfes Turkish Restaurant</strong> <br> Delicious food, great company, and good vibes! <br> We toasted to how far we'd come since Jan 2025.",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "cover",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2025-07-27",
+  "duration": 8000,
+  "expandable": true
+},
+    
+    {
+  "id": "slide-results",
+  "backgroundImage": "/assets/images/slider/rav-slider.webp",
+  "backgroundColorOverlay": "rgba(0, 15, 30, 0.75)",
+  "title": "Tournament Success! 🏆",
+  "text": "<strong>Rav</strong> wins Men's Doubles at <strong>Zahira Summer Festival 2025</strong>. <br>Another proud moment for <strong>Cobra Smash</strong>! 🐍",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "June 29, 2025",
+  "expandable": true
+},
+
+    {
+      "id": "slide-results",
+      "backgroundImage": "/assets/images/slider/tournament.webp",
+      "backgroundColorOverlay": "rgba(0, 15, 30, 0.75)",
+      "title": "Tournament Success!",
+      "text": "Huge congratulations to our members!<br><strong>Sri & Rav</strong> are the Men's Doubles Champions.<br><strong>Raj </strong> secured Runners-Up in Mixed Doubles. <br>An outstanding performance by our team!",
+      "buttonText": "See Latest Buzz",
+      "buttonLink": "#latest-buzz",
+      "backgroundSize": "contain",
+      "titleColor": "var(--color-cobra-yellow)",
+      "duration": 8000,
+       "date": "June 7, 2025",
+      "expandable": true
+    },
+    {
+      "id": "slide-banner",
+      "backgroundImage": "/assets/images/slider/csbs-logo_sqr.webp",
+      "backgroundSize": "contain",
+      "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+      "title": "",
+      "text": "",
+      "buttonText": "",
+      "buttonLink": "",
+      "titleColor": "",
+      "date":"",
+      "expandable": true
+    },
+    {
+      "id": "slide2",
+      "backgroundImage": "/assets/images/slider/horizontal.jpg",
+      "backgroundColorOverlay": "rgba(0, 0, 0, 0.65)",
+      "title": "Unleash Your Inner Cobra!",
+      "text": "Join Cobra Smash Badminton Club in Milton Keynes – A social and friendly group where Passion Meets Power on the Court. Our story began in January 2025.",
+      "buttonText": "Request to Join",
+      "buttonLink": "#join-us",
+      "backgroundSize": "cover",
+      "titleColor": "var(--color-cobra-yellow)",
+      "date": "",
+      "expandable": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Instructions for all web crawlers
+User-agent: *
+
+# Allow crawlers full access to the main page and essential assets
+Allow: /
+Allow: /assets/images/
+
+# Disallow crawling of structural, style, script, and data folders
+# This focuses crawl budget on content and prevents indexing of non-page assets.
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /data/
+
+# Point all crawlers to the sitemap for a list of important pages
+Sitemap: https://cobrasmash.org.uk/sitemap.xml

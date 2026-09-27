@@ -1,0 +1,208 @@
+{
+  "articles": [
+    
+{
+  "id": "news-next-session",
+  "title": "Upcoming Session",
+  "date": "September 2, 2026",
+  "image": "assets/images/news/default.webp",
+  "detailImage": "",
+  "description": "📅 Next Session: <strong>Wednesday, 2 September 2026</strong><br><br>🕖 <strong>Courts 4, 5 & 6: 7:00 PM - 9:00 PM</strong><br><br>📍 <strong>National Badminton Centre, Bradwell Rd, Milton Keynes MK8 9LA</strong> 🏸",
+  "expandable": true
+},
+{
+"id": "news-3x15-live",
+"title": "We're Playing the Future of Badminton!",
+"date": "June 3, 2026",
+"image": "assets/images/news/15pointsystem.webp",
+"detailImage": "",
+"description": "⚡ <strong>Big news, Cobras!</strong> 🐍<br><br>The BWF has officially confirmed that all international matches will switch to the new <strong>15-point scoring system</strong> from <strong>4th January 2027</strong>. We thought, why wait?<br><br>🎯 From <strong>3rd June 2026</strong>, every Cobra Smash club night is being played under the new <strong>3x15 format</strong>. That puts us a full <strong>seven months ahead</strong> of the international rollout. 🚀<br><br>🏸 You'll notice the games feel faster, the rallies feel sharper, and every single point carries a bit more weight. It's a brilliant way to sharpen up before the rest of the world catches on.<br><br>The future of badminton is already happening on our courts. Come and be part of it. 🔥<br><br>📎 <strong>Want the full details?</strong> Have a read of the BWF's official announcement <a href='https://bwfbadminton.com/news-single/2026/04/26/key-changes-under-the-3x15-scoring-system/' target='_blank' rel='noopener'>here</a>.",
+"expandable": true
+},
+{
+"id": "news-cobra-elections",
+"title": "Cobra Smash Election Results Are In!",
+"date": "June 1, 2026",
+"image": "assets/images/news/CobraElections.webp",
+"detailImage": "",
+"description": "🗳️ <strong>Thank you to everyone for voting, Cobras!</strong> 🐍<br><br>The votes have been cast, the results are in, and we're thrilled to announce the team who'll be steering the club forward. 🏆<br><br>🎉 <strong>Congratulations to your newly elected committee:</strong><br><br>👥 <strong>Social Secretary:</strong> Adnan<br>🛡️ <strong>Cobra B Captain:</strong> Ram<br>⭐ <strong>Board Members:</strong> Raj &amp; Kal — in a brilliant twist, both finished on <strong>equal votes</strong>, and we're excited to announce that <strong>both will be joining</strong> the board! 🤝<br>🏸 <strong>Cobra A Captain:</strong> Rav (continuing in the role)<br><br>A huge thank you to everyone who stood for election, voted, and got involved. This is your club, and your voice shapes its future. 🔥<br><br>Here's to a brilliant season ahead — let's take the club forward together! 🚀<br><br>⭐ <strong>Thanks everyone for the support!</strong> ⭐",
+"expandable": true
+},
+{ 
+  "id": "news-mkdba-league-10", 
+  "title": "Cobras Strike as One 6–3 Win vs MK Phoenix B 🏸🔥", 
+  "date": "May 17, 2026", 
+  "image": "assets/images/news/CSvsPhoenixMay17.webp", 
+  "detailImage": "", 
+  "description": "<strong>🔥 Opponent:</strong> MK Phoenix B<br><strong>🏟️ Fixture:</strong> Away<br><strong>✅ The Super Six:</strong> Rav, Ram, Rajat, Prabhu, Sri, Kal<br><br><strong>🎯 RESULT:</strong> The Cobras struck as one 🐍🔥 to win 6–3. Next division unlocked! 🚀", 
+  "expandable": true 
+},
+{ 
+  "id": "news-mkdba-league-9", 
+  "title": "Collective Brilliance 7–2 Win vs Barefoot Bandits 🏸🔥", 
+  "date": "April 26, 2026", 
+  "image": "assets/images/news/CSvsBF_Apr26.webp", 
+  "detailImage": "", 
+  "description": "<strong>🔥 Opponent:</strong> Barefoot Bandits<br><strong>🏟️ Fixture:</strong> Away<br><strong>✅ The Super Six:</strong> Rav, Ram, Shal, Sridhar, Sri, Kal<br><br><strong>🎯 RESULT:</strong> Collective brilliance sealed a commanding 7–2 win! Next division loading… 🚀", 
+  "expandable": true 
+},
+
+{
+  "id": "news-mkdba-league-8",
+  "title": "Dramatic 5–4 Win vs Woughton D 🏸🔥",
+  "date": "March 23, 2026",
+  "image": "assets/images/news/vsWoughtonMar23.webp",
+  "detailImage": "",
+  "description": "<strong>🔥 Opponent:</strong> Woughton D<br><strong>🏟️ Fixture:</strong> Away<br>✅ The Super Six:</strong> Rav, Adnan, Shalin, Sridhar, Kalim, Rajat<br><br><strong>🎯 RESULT:</strong> Edge-of-the-seat thriller sealed with a dramatic 5–4 win!",
+  "expandable": true
+},
+{
+  "id": "news-mkdba-league-7",
+  "title": "Cobra Smash on Fire vs MK Phoenix B 🔥🏸",
+  "date": "March 1, 2026",
+  "image": "assets/images/news/vsPhoenixMar01.webp",
+  "detailImage": "",
+  "description": "<strong>🔥 Opponent:</strong> MK Phoenix B<br><strong>🏟️ Fixture:</strong> Home<br>✅ The Super Six:</strong> Sri, Sridhar, Shalin, Adnan, Ram, Rajat<br><br><strong>🎯 RESULT:</strong> Cobra Smash on fire with a confident 7–2 victory!",
+  "expandable": true
+},
+{
+  "id": "news-mkdba-league-6",
+  "title": "Perfect 9–0 Sweep vs Greylings C 🏸🔥",
+  "date": "February 16, 2026",
+  "image": "assets/images/news/vsGreylingsFeb16.webp",
+  "detailImage": "",
+  "description": "<strong>🔥 Opponent:</strong> Greylings C<br><strong>🏟️ Fixture:</strong> Away<br>✅ The Super Six:</strong> Shalin, Sridhar, Rav, Rajat, Srikanth, Kalim<br><br><strong>🎯 RESULT:</strong> Total domination — a flawless 9–0 clean sweep!",
+  "expandable": true
+},
+{
+  "id": "news-mkdba-league-5",
+  "title": "Back-to-Back Wins vs Harlington A 🏸🔥",
+  "date": "February 12, 2026",
+  "image": "assets/images/news/vsHarlingtonFeb12.webp",
+  "detailImage": "",
+  "description": "<strong>🔥 Opponent:</strong> Harlington A<br><strong>🏟️ Fixture:</strong> Away<br>✅ The Super Six:</strong> Rav, Adnan, Shalin, Sridhar, Srikanth, Kalim<br><br><strong>🎯 RESULT:</strong> Back-to-back dominance with another solid 7–2 win!",
+  "expandable": true
+},
+{
+  "id": "news-mkdba-league-4",
+  "title": "Strong Start vs Greylings C 🏸🔥",
+  "date": "February 1, 2026",
+  "image": "assets/images/news/vsGreylingsFeb01.webp",
+  "detailImage": "",
+  "description": "<strong>🔥 Opponent:</strong> Greylings C<br><strong>🏟️ Fixture:</strong> Home<br>✅ The Super Six:</strong> Rav, Ram, Shalin, Sridhar, Srikanth, Kalim<br><br><strong>🎯 RESULT:</strong> Strong opening statement with a commanding 7–2 victory!",
+  "expandable": true
+},
+{
+  "id": "news-mkdba-league-3",
+  "title": "Strong Comeback Win at MKDBA League 🏸🔥",
+  "date": "January 18, 2026",
+  "image": "assets/images/news/CSvicHar.webp",
+  "detailImage": "",
+  "description": "<strong>Strong Comeback at MKDBA League! 🏸🔥</strong><br><br> <strong>⚡ Bounce Back in Style:</strong> After a narrow 5–4 loss to Woughton, the team responded with a fantastic 7–2 win.<br><br> <strong>🔥 Opponent:</strong> Harlington A<br> <strong>👏 Team Effort:</strong> Brilliant performance from the whole squad<br> <strong>⭐ Special Mention:</strong> Rav played County matches at High Wycombe from 3:00 pm and came straight over to dominate<br><br> <strong>🎯 RESULT:</strong> Convincing 7–2 victory, great comeback!",
+  "expandable": true
+}
+,
+{
+  "id": "news-mkdba-league-2",
+  "title": "Back-to-Back Domination at MKDBA League! 🏸🔥",
+  "date": "September 28, 2025",
+  "image": "assets/images/news/CSVictorySep28.webp",
+  "detailImage": "",
+  "description": "<strong>⚡ The Streak Continues: Another 9–0 Victory at MKDBA League 2025–2026!</strong> <br> <br> <strong>📅 Second Clash:</strong> Sunday, Sept 28 <br>  <strong>🔥 Opponent:</strong> Buckingham <br>  <strong>👑 Captain:</strong> Rav <br>  <strong>✅ The Super Six:</strong> Kal, Prabhu, Sridhar, Rav, Shal, Sri <br>  <strong>📍 Battleground🏸:</strong> National Badminton Centre, MK @ 7:00PM  <br> <br> <strong>🎯 RESULT:</strong> Back-to-back 9-0 clean sweeps, NO MERCY!",
+  "expandable": true
+}
+,
+{
+  "id": "news-mkdba-league",
+  "title": "Flawless Start at MKDBA League!🏸🔥",
+  "date": "September 14, 2025",
+  "image": "assets/images/news/CSvsBandits-Vic.webp",
+  "detailImage": "",
+  "description": "<strong>⚡ The legend has arrived! Cobra Smash Strikes with Flawless Start at MKDBA League 2025–2026!</strong> <br> <br> <strong>📅 First Clash:</strong> Sunday, Sept 14 <br>  <strong>🔥 Opponent:</strong> Barefoot Bandits  <br>  <strong>👑 Captain:</strong> Rav <br>  <strong>✅ The Super Six:</strong> Kal, Prabhu, Raj, Rav, Shal, Sri <br>  <strong>📍 Battleground🏸: </strong> National Badminton Centre, MK @ 7:00PM  <br> <br> <strong>🎯 RESULT:</strong> Flawless start with a crushing 9-0 victory!",
+  "expandable": true
+},
+{
+  "id": "news-enfes-social",
+  "title": "Cobra Smash Social Dinner @ Enfes! 🎉",
+  "date": "July 27, 2025",
+  "image": "assets/images/news/enfes-news.webp",
+  "detailImage": "",
+  "description": "🎊 We celebrated in style at the first-ever Cobra Smash Social!<br><br>📍<strong>Enfes Turkish Restaurant</strong><br><br>An evening of delicious food, great company, and good vibes—all off the court! We raised a toast to how far we’d come since January 2025. 🐍💛",
+  "expandable": true
+},
+    {
+  "id": "news-mens-doubles-2025",
+  "title": "Rav, Men's Doubles Champion Again! 🏆",
+  "date": "June 29, 2025",
+  "image": "assets/images/news/rav-ZCOBA.webp",
+  "detailImage": "",
+  "description": "🎉 Huge congratulations to <strong>Rav</strong> for winning the <strong>Men's Doubles Badminton Championship</strong> at the <strong>Zahira Summer Festival 2025</strong> on <strong>Sunday, 29th June 2025</strong> at <strong>Harrow, London</strong>! 🇬🇧<br><br>After a fierce contest, with both teams winning one game each, Rav and his partner sealed the victory in a thrilling final game with a close score of <strong>22-20</strong>! 🏸🔥<br><br>Another proud moment for the <strong>Cobra Smash</strong> team this season! 🐍🥇",
+  "expandable": true
+},
+    {
+      "id": "news-mens-doubles-2025",
+      "title": "Sri & Rav, Men's Doubles Champions! 🏆",
+      "date": "June 7, 2025",
+      "image": "assets/images/news/rav-sri.webp",
+      "detailImage": "",
+      "description": "🎉 Huge congratulations to <strong>Sri & Rav</strong> for clinching the <strong>Men's Doubles Champion</strong> title at the <strong>Gemstars Summer Smash 2025</strong>! A spectacular performance in the final. Being 1 game down and Rav on 1 leg, they both produced a brilliant display to come out champions!!! 🥇🔥",
+      "expandable":true
+    },
+    {
+      "id": "news-mixed-doubles-2025",
+      "title": "Raj, Mixed Doubles Runners-Up! 🥈",
+      "date": "June 7, 2025",
+      "image": "assets/images/news/khin-raj.webp",
+      "detailImage": "",
+      "description": "👏 An outstanding performance by <strong>Raj</strong> secured the <strong>Runners-Up</strong> position in <strong>Mixed Doubles</strong> at the <strong>Gemstars Summer Smash 2025</strong>! 💪🏸"
+    },
+    {
+      "id": "yehlex-voted",
+      "title": "Team Chooses Yehlex again! 🗳️🏸",
+      "date": "June 1, 2025",
+      "image": "assets/images/news/yehlex.webp",
+      "detailImage": "",
+      "description": "🗳️ After a team-wide poll, <strong>Yehlex</strong> emerged as the chosen shuttle brand! Despite <strong>Airchy</strong>'s impressive flight, <strong>Yehlex</strong> wins on consistency and durability. Shipping delays and variability cost Airchy the crown. 👑"
+    },
+    {
+      "id": "prabhu-joins",
+      "title": "Prabhu Joins the Squad! 🎉🏸",
+      "date": "May 27, 2025",
+      "image": "assets/images/news/prabhu.webp",
+      "detailImage": "",
+      "description": "A huge welcome to <strong>Prabhu</strong>, our newest Cobra! 🐍 Looking forward to more epic midweek matchups! Let the rallies begin! 💪"
+    },
+    {
+      "id": "news-sri-mksm-winner",
+      "title": "Sri wins MKSM Doubles Championship! 🏆2025! 🎉🏸",
+      "date": "May 18, 2025",
+      "image": "assets/images/news/mksm.webp",
+      "detailImage": "",
+      "description": "Warmest congratulations to <strong>Sri</strong> on his well-deserved victory in the doubles championship at the MKSM 2025 tournament! 🏆💪"
+    },
+    {
+      "id": "airchy-tested",
+      "title": "Airchy Makes a Debut! ✈️🏸",
+      "date": "May 14, 2025",
+      "image": "assets/images/news/airchy.webp",
+      "detailImage": "",
+      "description": "We tried out <strong>Airchy</strong> shuttles and the team loved their flight and feel."
+    },
+    {
+      "id": "phyo-joins",
+      "title": "Phyo Joins Cobra Smash! 🙌🏸",
+      "date": "April 21, 2025",
+      "image": "assets/images/news/phyo.webp",
+      "detailImage": "",
+      "description": "A big Cobra Smash welcome to <strong>Phyo</strong>! 💥 Looking forward to thrilling games and unforgettable rallies every Wednesday! 🐍"
+    },   
+    {
+      "id": "shuttle-test-yehlex",
+      "title": "Shuttle Trials end with Yehlex 🚀🧐",
+      "date": "February 5, 2025",
+      "image": "assets/images/news/shuttles.webp",
+      "detailImage": "",
+      "description": "We tested a variety of shuttle brands including <strong>Kawasaki</strong>, <strong>Ashaway</strong>, <strong>Babolat</strong>, <strong>Perfly</strong>, and <strong>Victor</strong>. After a solid smash test, <strong>Yehlex</strong> emerged as the favourite among the team! 🏸👍"
+    }
+  ]
+}

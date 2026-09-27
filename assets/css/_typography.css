@@ -1,0 +1,75 @@
+/* --- Typography --- */
+h1, h2, h3 { 
+    font-family: var(--font-primary); 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.section > h2 {
+    color: var(--color-logo-blue-dark);
+    font-size: clamp(1.6rem, 5vw, 2.6rem); 
+    font-weight: 500; 
+    margin-bottom: 1.25rem; 
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-logo-blue-primary); 
+    display: inline-block;
+}
+
+#team > h3 {
+    font-size: clamp(1.1rem, 3.5vw, 1.6rem); 
+    color: var(--color-logo-blue-primary);
+    margin: 1rem 0 0.75rem 0;
+}
+
+/* --- NEW: Styles for sub-sections and indented lists --- */
+.sub-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.section > .sub-section:first-child {
+    margin-top: 1.5rem;
+    padding-top: 0;
+    border-top: none;
+}
+
+.sub-section h3 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    color: var(--color-logo-blue-primary);
+    margin-bottom: 0.75rem;
+}
+
+.indented-list {
+    margin-left: 1.5rem;
+    line-height: 1.8;
+}
+
+/* --- Responsive Typography --- */
+/* THE FIX: Changed breakpoint from 768px to 992px */
+@media (min-width: 992px) {
+    .section > h2 { 
+        font-size: clamp(2rem, 5vw, 2.6rem); 
+    }
+    #team > h3, .sub-section h3 { 
+        font-size: clamp(1.4rem, 4vw, 1.6rem); 
+    }
+}
+
+@media (min-width: 1024px) {
+    .section > h2 { 
+        font-size: clamp(2.2rem, 3vw, 2.8rem); 
+    }
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}

@@ -1,0 +1,75 @@
+/*
+ *  _responsive.css
+ *  This file contains global responsive overrides.
+ *  Most component-specific responsive styles are located
+ *  within their own files (_header.css, _components.css, etc.)
+ *  using a mobile-first approach.
+*/
+
+
+/* --- TABLET & DESKTOP LANDSCAPE BREAKPOINT --- */
+/* This breakpoint targets landscape tablets and all desktops, 
+   ensuring the layout is appropriate for wider screens. */
+@media (min-width: 992px) and (orientation: landscape) {
+
+    /* Update the CSS variable for the header height. JS uses this for scroll-padding. */
+    :root { 
+        --current-header-height: var(--desktop-header-height); 
+    }
+
+    /* Increase the size of the hero slider for more impact on larger screens */
+    .slides-container { 
+        height: 450px; 
+    }
+    .slide { 
+        padding: 3rem 1.5rem; 
+    }
+    .slide h1, .slide h2 { 
+        font-size: clamp(1.8rem, 6vw, 2.8rem); 
+    }
+    .slide p { 
+        font-size: clamp(1rem, 2.5vw, 1.2rem); 
+    }
+}
+
+
+/* --- LARGE DESKTOP BREAKPOINT --- */
+/* Further refinement for very large screens to use the extra space */
+@media (min-width: 1200px) and (orientation: landscape) {
+
+    /* Make the hero slider even larger on wide screens */
+    .slides-container { 
+        height: 500px; 
+    }
+    .slide { 
+        padding: 4rem 2rem; 
+    }
+    .slide h1, .slide h2 { 
+        font-size: clamp(2.2rem, 4vw, 3rem); 
+    }
+    .slide p { 
+        font-size: clamp(1.1rem, 2vw, 1.25rem); 
+    }
+
+    /* Increase main section heading size */
+    .section > h2 { 
+        font-size: clamp(2.2rem, 3vw, 2.8rem); 
+    }
+}
+
+
+/* --- FOOTER LAYOUT FOR MOBILE --- */
+/* This rule ensures the footer stacks vertically on portrait screens,
+   regardless of their width (e.g., portrait iPads). */
+@media (max-width: 991px), (orientation: portrait) {
+    .footer-main-content { 
+        flex-direction: column; 
+        gap: 3rem; 
+    }
+    .footer-column { 
+        text-align: center; 
+    }
+    .footer-socials { 
+        justify-content: center; 
+    }
+}

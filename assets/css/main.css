@@ -1,0 +1,20 @@
+/**
+ * Cobra Smash Badminton Club - Main Stylesheet
+ * 
+ * This file imports all other CSS modules in the correct order.
+ * Do not add styles directly to this file. Instead, add them
+ * to the appropriate module file within the /modules/ directory.
+ */
+
+/* 1. Base styles (variables, resets, global typography) */
+@import url('_base.css');
+@import url('_typography.css');
+
+/* 2. Layout (header, footer, main containers) */
+@import url('_layout.css');
+@import url('_header.css');
+@import url('_footer.css');
+
+/* 3. Components (buttons, cards, slider, faq, etc.) */
+@import url('_hero-slider.css');
+@import url('_components.css');

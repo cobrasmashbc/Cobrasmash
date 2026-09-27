@@ -1,0 +1,16 @@
+{
+  "testimonials": [
+    {
+      "quote": "As one of the organisers, I'm incredibly proud of the friendly yet competitive community we've. Every Wednesday is a highlight, filled with top-quality games.",
+      "name": "Sri",
+      "role": "The Shogun Cobra",
+      "date": "June 10, 2025"
+    },
+    {
+      "quote": "The perfect balance between having a laugh and playing some genuinely tough matches. It's what I look forward to all week.",
+      "name": "Shal",
+      "role": "The Cross Court King Cobra",
+      "date": "June 9, 2025"
+    }
+  ]
+}

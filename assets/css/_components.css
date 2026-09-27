@@ -1,0 +1,599 @@
+/* --- Buttons --- */
+.btn {
+    display: inline-block; 
+    text-decoration: none; 
+    border-radius: 4px;
+    font-family: var(--font-primary); 
+    font-weight: 500; 
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    color: var(--color-black-base); /* This is good! */
+    background-color: var(--color-cobra-yellow);
+    padding: 0.6rem 1.2rem; 
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+
+}
+
+.indented-list {
+    padding-left: 2em;
+  }
+
+
+.btn:hover { 
+    background-color: var(--color-tagline-orange-yellow); /* This is lighter yellow */
+    /* Let's ensure the text color remains dark on hover too. */
+    color: var(--color-black-base); /* Let's add this for safety */
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+}
+
+.btn.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-logo-blue-primary);
+    color: var(--color-logo-blue-primary); /* This is fine on a white background. */
+    box-shadow: none;
+}
+
+.btn.btn-secondary:hover {
+    background-color: var(--color-logo-blue-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,92,106,0.2);
+}
+
+/* --- Cards --- */
+.card-grid { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 1.25rem; 
+}
+
+.card {
+    background: var(--color-off-white); 
+    border: 1px solid #d8d8d8;
+    padding: 1rem; 
+    border-radius: 6px; 
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; 
+    flex-direction: column;
+}
+
+.card:hover { 
+    transform: translateY(-6px); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12); 
+}
+
+.card h3 {
+    font-size: 1.1rem; 
+    margin-bottom: 0.75rem; 
+    color: var(--color-logo-blue-dark);
+}
+
+.card h3 i { 
+    margin-right: 0.5rem; 
+    color: var(--color-logo-blue-primary); 
+}
+
+.card p, 
+.card ul { 
+    font-size: 0.875rem; 
+    margin-bottom: 0.5rem; 
+}
+
+.card ul { 
+    list-style-position: inside; 
+    text-align: left; 
+    padding-left: 0.3125rem; 
+}
+
+/* --- Member Cards --- */
+.member-card .profile-pic-container {
+    width: 70px; 
+    height: 70px; 
+    border: 2px solid var(--color-logo-blue-primary);
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin: 0 auto 0.75rem auto; 
+    font-size: 2.2rem; 
+    color: var(--color-logo-blue-dark); 
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+}
+
+.member-card .player-image-actual { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.member-card:hover .profile-pic-container { 
+    transform: scale(1.05) rotate(3deg); 
+    border-color: var(--color-cobra-yellow); 
+}
+
+.member-card .member-name { 
+    font-size: 1rem; 
+    font-weight: 500; 
+    color: var(--color-logo-blue-dark); 
+    margin-bottom: 0.2rem; 
+}
+
+.member-card .member-role { 
+    font-size: 0.8rem; 
+    color: var(--color-logo-blue-dark); 
+    font-weight: 700; 
+    margin-bottom: 0.4rem; 
+    min-height: 1.7em; 
+}
+
+.member-card .member-detail { 
+    font-size: 0.8rem; 
+    color: var(--color-logo-blue-dark); 
+    font-weight: 700; 
+    margin-bottom: 0.4rem; 
+    min-height: 1.7em; 
+    flex-grow: 1; 
+}
+
+
+/* --- FAQ Section --- */
+.faq-container { 
+    max-width: 800px; 
+    margin: 1rem auto; 
+}
+
+.faq-item { 
+    border-bottom: 1px solid #ddd; 
+}
+
+.faq-question {
+    width: 100%; 
+    background: none; 
+    border: none; 
+    text-align: left;
+    padding: 1rem 0.5rem; 
+    font-size: clamp(1rem, 3vw, 1.1rem);
+    font-family: var(--font-body); 
+    font-weight: 700; 
+    color: var(--color-logo-blue-dark);
+    cursor: pointer; 
+    position: relative; 
+    padding-right: 2rem;
+    transition: background-color 0.2s ease;
+}
+
+.faq-question:hover { 
+    background-color: #f0f7f8; 
+}
+
+.faq-question::after {
+    content: '\f067'; /* Font Awesome plus icon */
+    font-family: 'Font Awesome 6 Free'; 
+    font-weight: 900;
+    position: absolute; 
+    right: 0.5rem; 
+    top: 50%;
+    transform: translateY(-50%); 
+    color: var(--color-logo-blue-primary);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after { 
+    transform: translateY(-50%) rotate(45deg); 
+}
+
+.faq-answer {
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.3s ease;
+}
+
+.faq-answer p { 
+    padding: 0 1rem 1.25rem 1rem; 
+    margin-bottom: 0; 
+    line-height: 1.7; 
+}
+
+/* ... (Keep all styles from .btn to .faq-answer) ... */
+
+/* --- Flip Card for News Section --- */
+.flip-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.25rem;
+}
+
+.show-more-container {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.flip-card {
+    background-color: transparent;
+    min-height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.flip-card:focus {
+    outline: 2px solid var(--color-logo-blue-primary);
+    outline-offset: 3px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.flip-card-front {
+    background-color: var(--color-black-base);
+    color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: flex-end;
+}
+
+.flip-card.is-flipped .flip-card-front {
+    pointer-events: none;
+}
+
+
+.flip-card-front::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+    z-index: 1;
+}
+
+.front-content {
+    position: relative;
+    z-index: 2;
+    padding: 1.25rem;
+    text-align: left;
+}
+
+.front-content h3 {
+    font-size: 1.25rem;
+    color: var(--color-white);
+    margin: 0 0 0.25rem 0;
+}
+
+.front-content .card-hint {
+    font-size: 0.9rem;
+    color: var(--color-white); /* THE ACCESSIBILITY FIX */
+    font-weight: 500;
+    opacity: 0.9; /* Slightly less prominent than the title */
+}
+
+.front-content .card-hint i {
+    margin-right: 0.3rem;
+    transition: transform 0.3s ease;
+    color: var(--color-cobra-yellow); /* Keep the icon yellow! */    
+}
+
+.flip-card:hover .card-hint i {
+    transform: rotate(180deg) scale(1.1);
+}
+
+.card-expand-btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: rgba(255,255,255,0.2);
+    color: var(--color-white);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 3;
+}
+.card-expand-btn:hover {
+    background-color: var(--color-logo-blue-primary);
+    transform: scale(1.1);
+}
+.card-expand-btn svg {
+    pointer-events: none;
+}
+
+/* --- THE FIX: Correct positioning for news card and slider date badge --- */
+.card-date-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 3;
+    background-color: var(--color-white);
+    border-radius: 4px;
+    width: 32px;
+    text-align: center;
+    font-family: var(--font-primary);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+.card-date-badge .day {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-logo-blue-dark);
+    padding: 2px 0;
+}
+.card-date-badge .month {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-white); /* Keep this */
+    background-color: var(--color-logo-blue-primary); /* Keep this */
+    padding: 2px 0;
+}
+
+.flip-card-back {
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    transform: rotateY(180deg);
+    padding: 1.5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+    overflow-y: auto;
+}
+
+.back-image-container {
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.back-image-container .back-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+.back-image-container:hover .back-image {
+    transform: scale(1.03);
+}
+
+.back-content-container h4 {
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    color: var(--color-logo-blue-dark);
+    margin-bottom: 0.25rem;
+}
+
+.back-content-container .news-date {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #777;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.back-content-container .description-content {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.description-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5rem;
+}
+.description-content li {
+    background-color: var(--color-off-white);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-align: center;
+}
+.description-content h3 {
+    font-size: 1rem;
+    margin: 1rem 0 0.5rem 0;
+    color: var(--color-logo-blue-dark);
+}
+.description-content a {
+    color: var(--color-logo-blue-primary);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.description-content a:hover {
+    color: var(--color-logo-blue-dark);
+    text-decoration: underline;
+}
+
+/* --- Testimonials Marquee --- */
+#testimonials { 
+    overflow-x: hidden; 
+}
+
+.marquee-container {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    gap: 1.5rem;
+    will-change: transform;
+}
+
+.testimonial-card {
+    background-color: var(--color-off-white);
+    border: 1px solid #ddd;
+    border-left: 5px solid var(--color-logo-blue-primary);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    width: 320px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex; /* Added for flexbox layout */
+    flex-direction: column; /* Stack content vertically */
+}
+
+.testimonial-card p.quote {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Allow quote to take up available space */
+}
+
+/* --- NEW: Testimonial footer and date styles --- */
+.testimonial-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto; /* Push to the bottom */
+}
+
+.testimonial-date {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+    text-align: left;
+}
+
+.testimonial-footer .name {
+    font-weight: 700;
+    text-align: right;
+    color: var(--color-logo-blue-dark);
+    margin: 0;
+}
+
+.testimonial-footer .role {
+    font-size: 0.8rem;
+    text-align: right;
+    color: #666;
+    margin: 0;
+}
+
+
+
+/* --- Responsive Components --- */
+/* THE FIX: Changed breakpoint from 768px to 992px */
+@media (min-width: 992px) and (orientation: landscape)  {
+    .btn { 
+        font-size: 1rem; 
+        padding: 0.75rem 1.5rem; 
+    }
+    .card-grid { 
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    }
+    .card h3 { 
+        font-size: 1.25rem; 
+    }
+    .card p, 
+    .card ul { 
+        font-size: 0.9rem; 
+    }
+    .member-card .profile-pic-container { 
+        width: 100px; 
+        height: 100px; 
+        border-width: 3px; 
+    }
+    .member-card .member-name { 
+        font-size: 1.1rem; 
+    }
+    .member-card .member-role, 
+    .member-card .member-detail { 
+        font-size: 0.85rem;
+    }
+}
+
+
+/* --- Lightbox for Image Expansion --- */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    position: relative;
+}
+
+.lightbox-image {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: -10px;
+    font-size: 2.5rem;
+    color: var(--color-white);
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}

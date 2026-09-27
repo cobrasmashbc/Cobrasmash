@@ -1,0 +1,38 @@
+{
+  "admins": [
+    {
+      "name": "Sri",
+      "iconClass": "fas fa-user-shield",
+      "role": "The Shogun Cobra",
+      "detail": "The Vault Keeper",
+      "image": "sri.webp",
+      "bio": "Key organizer and passionate player."
+    },
+    {
+      "name": "Shal",
+      "iconClass": "fas fa-user-cog",
+      "role": "The Cross Court King Cobra",
+      "detail": "The Welfare Sensei",
+      "image": "shal.webp",
+      "bio": "Known for deceptive shots and court strategy."
+    },
+    { "name": "Kal", "role": "The Net Ninja", "detail": "Dojo Council", "image": "kal.webp", "bio": "" },
+    { "name": "Rajat", "role": "The Tornado Smasher", "detail": "Dojo Council", "image": "raj.webp", "bio": "" }
+
+  ],
+  "members": [
+    { "name": "Adnan", "role": "The Serve Maestro", "detail": "The Social Fang", "image": "adnan.webp", "bio": "" },
+    { "name": "Rav", "role": "The Grand Master Smash", "detail": "Strike Commander Team A", "image": "rav.webp", "bio": "" },
+    { "name": "Ram", "role": "The Cross-Drop Specialist", "detail": "Strike Commander Team B", "image": "ram.webp", "bio": "" },
+    { "name": "Alex", "role": "The Left-Hand Cobra", "detail": "", "image": "alex.webp", "bio": "" },
+    { "name": "Imran", "role": "The Master Blaster", "detail": "", "image": "imran.webp", "bio": "" },
+    { "name": "Mark", "role": "The Cool Court Cobra", "detail": "", "image": "mark.webp", "bio": "" },
+    { "name": "Prashant", "role": "The Sensei Striker", "detail": "", "image": "prashant.webp", "bio": "" },
+    { "name": "Prabhu", "role": "The Master of Deception", "detail": "", "image": "prabhu.webp", "bio": "" },
+    { "name": "Phyo", "role": "The All-Court Wizard", "detail": "", "image": "phyo.webp", "bio": "" },
+    { "name": "Sridhar","role": "The Backhand Blaster", "detail": "", "image":"sridhar.webp", "bio": "" },
+    { "name": "Srinivas", "role": "The Smash Commander", "detail": "", "image": "srinivas.webp", "bio": "" },
+    { "name": "Steffan", "role": "The Icon", "detail": "", "image": "stef.webp", "bio": "" },
+    { "name": "Suraj", "role": "The Strikeback Warrior", "detail": "", "image": "suraj.webp", "bio": "" }
+  ]
+}

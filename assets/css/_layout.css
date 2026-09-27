@@ -1,0 +1,30 @@
+/* --- Main Content Container & Sections --- */
+.container {
+    width: 90%; 
+    max-width: 1160px; 
+    margin: 0 auto; 
+    padding: 1.25rem;
+    background-color: var(--color-white); 
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.section { 
+    margin-bottom: 2rem; 
+    padding-bottom: 1.5rem; 
+    border-bottom: 1px solid #e0e0e0; 
+}
+
+/* Add top margin to first section inside the container */
+.container > .section:first-child {
+    margin-top: 1.5rem;
+}
+
+.section:last-child { 
+    border-bottom: none; 
+    margin-bottom: 0; 
+}
+
+section[id] { 
+    /* scroll-margin-top is dynamically set by JS to accommodate the sticky header */
+}

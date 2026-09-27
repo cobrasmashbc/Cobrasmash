@@ -1,0 +1,184 @@
+/* --- Header: Mobile First --- */
+header {
+    background: var(--color-black-base); 
+    color: var(--color-white);
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    z-index: 1000; 
+    box-shadow: 0 3px 12px rgba(0,0,0,0.5);
+    min-height: var(--mobile-header-min-height);
+}
+
+.header-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0.5rem 1rem; 
+    max-width: 1160px; 
+    margin: 0 auto;
+    min-height: var(--mobile-header-min-height);
+    position: relative;
+}
+
+.logo {
+    height: 75px;
+    width: auto;
+    object-fit: contain; 
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002;
+}
+
+body.mobile-menu-open .header-content .logo {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo:hover { 
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.menu-toggle {
+    display: flex;
+    background: none; 
+    border: none; 
+    color: var(--color-white);
+    font-size: 1.75rem; 
+    cursor: pointer;
+    z-index: 1002; 
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav#main-nav {
+    display: none; 
+    position: fixed; /* Changed to fixed to ensure it's always in viewport */
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    z-index: 1001;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; 
+    padding: 80px 0;
+}
+
+nav#main-nav.nav-active {
+    display: flex;
+}
+
+nav#main-nav ul {
+    list-style: none; 
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+    gap: 0.8rem;
+    width: 100%;
+}
+
+nav#main-nav ul li a {
+    display: inline-block; 
+    font-family: var(--font-primary);
+    color: var(--color-off-white); 
+    text-decoration: none;
+    font-weight: 400; 
+    font-size: 1.2rem; 
+    letter-spacing: 1px;
+    padding: 0.4rem 1rem;
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav#main-nav ul li a:hover,
+nav#main-nav ul li a.active {
+    color: var(--color-cobra-yellow);
+}
+
+
+/* --- Responsive Header for Tablets and Desktops --- */
+/* THE FIX: Use a landscape-oriented breakpoint. */
+/* This applies to landscape tablets and all desktops. */
+@media (min-width: 992px) and (orientation: landscape) {
+    header { 
+        height: var(--desktop-header-height); 
+    }
+    .header-content { 
+        justify-content: space-between; 
+        height: var(--desktop-header-height); 
+        padding: 0 1.5rem; 
+    }
+    
+    body.mobile-menu-open .header-content .logo {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .logo { 
+        position: static;
+        transform: none;
+        height: calc(var(--desktop-header-height) - 20px);
+        max-width: 200px;
+    }
+    .logo:hover {
+        transform: scale(1.05);
+    }
+    
+    .menu-toggle { 
+        display: none; 
+    }
+    nav#main-nav { 
+        display: flex !important; 
+        position: static; 
+        height: auto; 
+        width: auto; 
+        background-color: transparent; 
+        backdrop-filter: none; 
+        flex-direction: row; 
+        align-items: center; 
+        overflow-y: visible;
+        padding: 0;
+    }
+    nav#main-nav ul { 
+        flex-direction: row; 
+        gap: 0.5rem; 
+        width: auto;
+    }
+    nav#main-nav ul li a { 
+        padding: 0.5rem 0.8rem; 
+        font-size: 0.9rem; 
+        color: var(--color-off-white); 
+        border-radius: 4px;
+        transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+    nav#main-nav ul li a:hover, 
+    nav#main-nav ul li a.active { 
+        background-color: var(--color-logo-blue-primary); 
+        color: var(--color-white); 
+        transform: translateY(-2px);
+    }
+}
+
+/* Add more spacing for very large desktop screens */
+@media (min-width: 1200px) and (orientation: landscape) {
+    .logo {
+        height: calc(var(--desktop-header-height) - 15px); 
+        max-width: 220px; 
+    }
+
+    nav#main-nav ul li a { 
+        padding: 0.5rem 1rem; 
+        font-size: 1rem; 
+    }
+}

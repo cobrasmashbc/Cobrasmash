@@ -1,0 +1,44 @@
+/* --- Global Resets & Base Variables --- */
+:root {
+    --color-black-base: #0A0A0A;
+    --color-logo-blue-primary: #007B8E; 
+    --color-logo-blue-dark: #005C6A;   
+    --color-cobra-yellow: #FFC107;
+    --color-tagline-orange-yellow: #FFAE00; 
+    --color-white: #FFFFFF;
+    --color-off-white: #f5f5f5;
+    --color-text-light: #EAEAEA;
+    --color-text-medium: #cccccc;
+    --color-text-dark: #333333;
+    --font-primary: 'Oswald', Impact, sans-serif;
+    --font-body: 'Roboto', Arial, sans-serif;
+    
+    /* --- THE FIX --- */
+    --mobile-header-min-height: 80px; /* Increased from 70px to give logo more space */
+    --desktop-header-height: 100px;
+    --current-header-height: var(--mobile-header-min-height); /* This is updated by JS */
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+    font-size: 16px; 
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background-color: var(--color-off-white);
+    color: var(--color-text-dark);
+    padding-top: var(--current-header-height); 
+}
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+}
