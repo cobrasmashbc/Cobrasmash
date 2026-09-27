@@ -20,19 +20,21 @@ For project inquiries, collaboration, or technical details, feel free to get in 
 
 ```plaintext
 /
-├── index.html                 # Entry point of the website
-├── assets/
-│   ├── css/                   # Modular CSS (components, layout, responsive, typography)
-│   ├── js/                    # JS logic & modules (sliders, navigation, UI helpers)
-│   ├── images/               # Optimized web images (logos, players, news, slider)
-├── data/                     # JSON files powering dynamic content
-├── site.webmanifest          # PWA and web app support
-├── robots.txt, sitemap.xml   # SEO and web crawling configuration
-├── favicon.ico, .png, .svg   # Icons and favicons for multiple platforms
-├── BingSiteAuth.xml          # Bing site verification
-├── browserconfig.xml         # Microsoft tile configuration
-├── move_files.bat            # Utility script for deployment or migration
-└── README.md                 # Project documentation
+├── public/                       # Everything deployed to Cloudflare Pages (site root)
+│   ├── index.html                # Entry point of the website
+│   ├── assets/
+│   │   ├── css/                  # Modular CSS (components, layout, responsive, typography)
+│   │   ├── js/                   # JS logic & modules (sliders, navigation, UI helpers)
+│   │   └── images/               # Optimized web images (logos, players, news, slider)
+│   ├── data/                     # JSON files powering dynamic content
+│   ├── site.webmanifest          # PWA and web app support
+│   ├── robots.txt, sitemap.xml   # SEO and web crawling configuration
+│   ├── favicon.ico               # Favicon
+│   ├── BingSiteAuth.xml          # Bing site verification
+│   └── browserconfig.xml         # Microsoft tile configuration
+├── mission.md, roadmap.md, techstack.md   # Project direction (not deployed)
+├── CLAUDE.md                     # Guidance for Claude Code (not deployed)
+└── README.md                     # Project documentation
 ````
 
 ---
@@ -79,9 +81,9 @@ You can open `index.html` directly in a browser, or use a local server (recommen
 Install [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in VS Code or run:
 
 ```bash
-npx serve .
+npx serve public
 # or
-python3 -m http.server
+python3 -m http.server 8000 --directory public
 ```
 
 Then navigate to `http://localhost:8000` (or whichever port is shown).
