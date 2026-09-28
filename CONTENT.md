@@ -85,3 +85,4 @@ Edit the existing `news-next-session` card; change only the dates unless the cou
 - `date`: `YYYY-MM-DD`; drives the badge.
 - `duration`: milliseconds on screen. Use 8000 for stills; for animations use the length `convert_media.py` prints (e.g. 10000).
 - The poster carries the text, so `title`/`text` stay as `<br>` spacers. For a text slide, put real text in them and use `"backgroundColorOverlay": "rgba(0, 0, 0, 0.5)"` so it stays readable.
+- `backgroundVideo` (optional): path to a `.webm` file (e.g. `assets/images/slider/<FileName>.webm`) to play instead of the static image. Keep `backgroundImage` too — it's used as the video's poster and as the lightbox/expand image. The video is muted, looped and lazy-loaded the same way the image is, and only plays while its slide is on screen; visitors with "reduce motion" enabled always see the static poster instead.
