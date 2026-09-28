@@ -1,6 +1,20 @@
 {
   "slides": [
     {
+  "id": "slide-new-joiners-aug22",
+  "backgroundImage": "assets/images/slider/NewJoineesAug22.webp",
+  "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
+  "title": "<br>",
+  "text": "<br><br>",
+  "buttonText": "See Latest Buzz",
+  "buttonLink": "#latest-buzz",
+  "backgroundSize": "contain",
+  "titleColor": "var(--color-cobra-yellow)",
+  "date": "2026-08-22",
+  "duration": 8000,
+  "expandable": true
+},
+    {
   "id": "slide-mkdba-league-8",
   "backgroundImage": "assets/images/slider/CSAvsBuckinghamASep20.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
