@@ -53,7 +53,7 @@
 
 ## ✨ Key Features
 
-* 🖼️ **Dynamic Hero Slider**: autoplaying image carousel with lazy-loaded slides.
+* 🖼️ **Dynamic Hero Slider**: autoplaying image/video carousel with lazy-loaded slides.
 * 📰 **Latest Buzz**: flip-card news and match results from `news.json`, with an image lightbox.
 * 🧑‍🤝‍🧑 **Meet the Cobras**: Cobra Council and Strike Squad player profiles.
 * 💬 **Member Testimonials**: a scrolling marquee of what members say.

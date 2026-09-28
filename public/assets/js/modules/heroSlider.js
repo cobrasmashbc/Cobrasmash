@@ -5,8 +5,12 @@ let currentIndex = 0;
 let slideTimeout;
 const DEFAULT_SLIDE_DURATION = 5000;
 
+function prefersReducedMotion() {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
 // --- LAZY LOAD HELPER FUNCTION ---
-// This function loads a slide's image if it hasn't been loaded yet.
+// This function loads a slide's image (and preloads its video, if any) if it hasn't been loaded yet.
 function loadSlideImage(index) {
     const slideElements = document.querySelectorAll('.slide');
     if (!slideElements[index]) return;
@@ -22,6 +26,27 @@ function loadSlideImage(index) {
         slideElement.style.backgroundImage = `url('${slideData.backgroundImage}')`;
         slideElement.classList.add('image-loaded');
     }
+
+    const video = slideElement.querySelector('.slide-video');
+    if (video && !video.src && video.dataset.src) {
+        video.src = video.dataset.src;
+    }
+}
+
+// Plays the current slide's video (if any) and pauses every other slide's video.
+function syncActiveVideo(index) {
+    document.querySelectorAll('.slide').forEach((slideElement, idx) => {
+        const video = slideElement.querySelector('.slide-video');
+        if (!video) return;
+        if (idx === index) {
+            if (!video.src && video.dataset.src) {
+                video.src = video.dataset.src;
+            }
+            video.play().catch(() => {});
+        } else {
+            video.pause();
+        }
+    });
 }
 
 function createSlider() {
@@ -74,14 +99,28 @@ function createSlider() {
 
         slideElement.innerHTML = `
             ${dateBadgeHtml}
-            ${expandButtonHtml} 
+            ${expandButtonHtml}
             <div class="slide-content-wrapper">
                 ${titleHtml}
                 <p>${slide.text}</p>
                 ${btnHtml}
             </div>
         `;
-        
+
+        // Optional video background: skipped entirely when the visitor prefers reduced motion,
+        // in which case the slide just shows its poster (backgroundImage) like any other slide.
+        if (slide.backgroundVideo && !prefersReducedMotion()) {
+            const video = document.createElement('video');
+            video.className = 'slide-video';
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            video.setAttribute('poster', slide.backgroundImage);
+            video.style.objectFit = size;
+            video.dataset.src = slide.backgroundVideo;
+            slideElement.prepend(video);
+        }
+
         const styleTagId = `style-for-${slideId}`;
         let existingStyleTag = document.getElementById(styleTagId);
         if (!existingStyleTag) {
@@ -118,6 +157,7 @@ function goToSlide(index) {
     // Call the lazy load helper when navigating
     loadSlideImage(currentIndex);
     updateSliderUI();
+    syncActiveVideo(currentIndex);
 }
 
 function autoSlide() {
@@ -165,7 +205,8 @@ async function initHeroSlider() {
         
         if (slidesData && slidesData.length > 0) {
             createSlider(); // Creates slides without all images
-            
+            syncActiveVideo(currentIndex); // Start the first slide's video, if it has one
+
             // Create dots
             sliderDotsContainer.innerHTML = '';
             slidesData.forEach((_, index) => {
