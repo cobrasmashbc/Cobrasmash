@@ -11,6 +11,9 @@ function stripHtml(html) {
   return html
     .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<\/?[^>]+(>|$)/g, "")
+    .split("\n")
+    .map((line) => line.trim())
+    .join("\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
