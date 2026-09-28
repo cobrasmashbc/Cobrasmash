@@ -1,6 +1,7 @@
 name = "cobrasmash-social-publish"
 main = "src/index.js"
 compatibility_date = "2026-09-28"
+workers_dev = false
 
 # Polls data/news.json and posts new Latest Buzz items to Facebook + Instagram.
 [triggers]
@@ -8,4 +9,4 @@ crons = ["0 * * * *"]
 
 [[kv_namespaces]]
 binding = "SOCIAL_PUBLISH_KV"
-id = "REPLACE_WITH_KV_NAMESPACE_ID" # see README.md for setup
+id = "f2852ed1b1b848af990f0732d193d72a"
