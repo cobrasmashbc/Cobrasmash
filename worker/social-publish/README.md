@@ -51,3 +51,23 @@ curl "http://localhost:8787/__scheduled?cron=0+*+*+*+*"
 
 Check `wrangler tail` (or the `wrangler dev` console) for the
 `Posted <id> to Facebook and Instagram` / `Failed to post <id>` log lines.
+
+## Ad-hoc trigger against production
+
+The deployed Worker has no HTTP handler and no public route (`workers_dev
+= false`) — it only runs on its hourly Cron Trigger. There's no dashboard
+button to fire a deployed Worker's cron on demand.
+
+To force a real run against the live production KV namespace and secrets
+without waiting for the next hour, run Wrangler's dev mode against remote
+resources instead of adding a permanent public endpoint:
+
+```bash
+wrangler dev --remote --test-scheduled
+curl "http://localhost:8787/__scheduled?cron=0+*+*+*+*"
+```
+
+This reads/writes the real `SOCIAL_PUBLISH_KV` namespace and uses the real
+secrets, so it will actually post to Facebook/Instagram if there's a new
+article — nothing is simulated. Stop the `wrangler dev` process (Ctrl+C)
+when done; it doesn't deploy or expose anything.
