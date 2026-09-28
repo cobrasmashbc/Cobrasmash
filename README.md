@@ -27,6 +27,7 @@
 │   ├── favicon.ico               # Favicon
 │   ├── BingSiteAuth.xml          # Bing site verification
 │   └── browserconfig.xml         # Microsoft tile configuration
+├── worker/social-publish/        # Cloudflare Worker: auto-posts Latest Buzz to Facebook/Instagram (deployed separately, not via Pages)
 ├── .claude/commands/             # Slash commands for the SDD workflow (not deployed)
 ├── mission.md, roadmap.md, techstack.md   # Project direction (not deployed)
 ├── SDD.md                        # Spec-driven development workflow (not deployed)
@@ -61,6 +62,7 @@
 * 📱 **Responsive Design**: mobile menu and layouts for phones and tablets.
 * ⚡ **Fast Loading**: optimized assets and lean, performant scripts.
 * 🔗 **SEO-Friendly**: social previews, structured data, sitemap and robots rules.
+* 📣 **Auto-Publish to Social**: new Latest Buzz posts are shared to Facebook and Instagram by a Cloudflare Worker (see Deployment below).
 
 The full feature history is tracked as issues on the [CobraSmash project board](https://github.com/users/cobrasmashbc/projects/1).
 
@@ -107,6 +109,8 @@ The site is hosted on **Cloudflare Pages**, connected to this repo, with no buil
 * A push to `main` goes live on [cobrasmash.org.uk](https://cobrasmash.org.uk/).
 * Any other pushed branch gets its own preview at `https://<branch-name>.cobrasmash.pages.dev`, with `/` in the branch name replaced by `-`. Cloudflare marks previews `noindex` so they stay out of search engines.
 * `public/_headers` sets response headers on Cloudflare: basic security headers everywhere, and `X-Robots-Tag: noindex` on `/data/` and member, news and slider photos so they stay out of search results. `robots.txt` also keeps those photos out of Google Images.
+
+The [`worker/social-publish/`](worker/social-publish/) Cloudflare Worker auto-posts new Latest Buzz items to Facebook and Instagram on an hourly Cron Trigger. It's deployed independently of Pages via `wrangler deploy` from that folder, not through Git integration; see its `README.md` for one-time KV and secrets setup.
 
 ---
 
