@@ -29,6 +29,8 @@
 │   └── browserconfig.xml         # Microsoft tile configuration
 ├── worker/social-publish/        # Cloudflare Worker: auto-posts Latest Buzz to Facebook/Instagram (deployed separately, not via Pages)
 ├── .claude/commands/             # Slash commands for the SDD workflow (not deployed)
+├── spec/<issue>-<slug>/          # Plan, requirements & validation log for complex changes (not deployed)
+├── tests/<issue>-<slug>/         # Manual test-case checklists for complex changes (not deployed)
 ├── mission.md, roadmap.md, techstack.md   # Project direction (not deployed)
 ├── SDD.md                        # Spec-driven development workflow (not deployed)
 ├── CONTENT.md                    # Templates for Latest Buzz and slider posts (not deployed)
@@ -116,11 +118,12 @@ The [`worker/social-publish/`](worker/social-publish/) Cloudflare Worker auto-po
 
 ## 🛠️ How We Work
 
-Changes follow an issue-driven, spec-driven workflow:
+Changes follow an issue-driven, spec-driven workflow, sized to the change:
 
-1. Every change starts as an issue on the [CobraSmash project board](https://github.com/users/cobrasmashbc/projects/1).
-2. Work happens on a `feature/<name>` branch and is checked on its Cloudflare Pages preview.
-3. It's merged to `main` through a pull request, which deploys it.
+1. Every change starts as an issue on the [CobraSmash project board](https://github.com/users/cobrasmashbc/projects/1), except routine content updates, which go straight to `main`.
+2. Simple changes get a lightweight 3-bullet spec inline in the issue/PR; complex changes get full `plan.md` / `requirements.md` / `validation.md` under `spec/` and a manual test-case checklist under `tests/`, kept permanently as an audit trail.
+3. Work happens on a `feature/<name>` branch and is checked on its Cloudflare Pages preview. Simple-change branches are deleted after merge; complex-change branches are kept, so a revert is always available.
+4. It's merged to `main` through a pull request, which deploys it.
 
 See:
 
