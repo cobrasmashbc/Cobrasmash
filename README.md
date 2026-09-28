@@ -30,6 +30,8 @@
 ├── .claude/commands/             # Slash commands for the SDD workflow (not deployed)
 ├── mission.md, roadmap.md, techstack.md   # Project direction (not deployed)
 ├── SDD.md                        # Spec-driven development workflow (not deployed)
+├── CONTENT.md                    # Templates for Latest Buzz and slider posts (not deployed)
+├── tools/convert_media.py        # Converts posters/animations to WebP (not deployed)
 ├── CLAUDE.md                     # Guidance for Claude Code (not deployed)
 ├── LICENSE                       # License terms (not deployed)
 └── README.md                     # Project documentation
@@ -94,7 +96,7 @@ Content is loaded at runtime from the `public/data/` folder:
 * `slider.json`: Hero slider images and content.
 * `testimonials-latest.json`: Member testimonials.
 
-Modular JS components like `contentLoader.js` and `heroSlider.js` fetch and display this data. To update content, edit the relevant JSON files and images; no back end is required.
+Modular JS components like `contentLoader.js` and `heroSlider.js` fetch and display this data. To update content, edit the relevant JSON files and images; no back end is required. Templates for Latest Buzz posts, slider slides and the next session are in [`CONTENT.md`](CONTENT.md), and `tools/convert_media.py` converts posters to WebP. Bump `<lastmod>` in `public/sitemap.xml` whenever site content changes.
 
 ---
 

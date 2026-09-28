@@ -40,4 +40,5 @@ All paths below are relative to `public/`.
 - **Slider** (`data/slider.json` → `slides[]`): also file order. Optional per-slide `duration` (ms, default 5000), `backgroundSize` (default `cover`), `imageAlignment`, `expandable`, `buttonText`/`buttonLink`. Only the first slide's image loads eagerly; others lazy-load as they come up.
 - **Players** (`data/players.json`): `admins[]` and `members[]`; `image` is a filename relative to `assets/images/players/` (not a full path, unlike news/slider). Falls back to the Font Awesome `iconClass` if no image.
 - Images are WebP; slider entries sometimes have a GIF variant alongside. News images live in `assets/images/news/`, slider images in `assets/images/slider/`.
-- When making significant content changes, bump `<lastmod>` in `sitemap.xml`.
+- Any change to what the site says (JSON content, or text/info in `index.html`) must bump `<lastmod>` in `public/sitemap.xml` to that day's date, in the same commit.
+- Latest Buzz and slider posts follow the templates in `CONTENT.md` (`/buzz` does the whole flow); convert media with `tools/convert_media.py` (Pillow) to WebP, never commit new PNG/GIF/JPG.

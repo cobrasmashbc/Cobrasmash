@@ -16,6 +16,8 @@
 4. **Outward-facing actions** (creating or editing issues, moving board items, pushing, opening or merging PRs) are shown first and run only after the user confirms.
 5. **Routine content updates skip the loop.** Simple, straightforward edits to the JSON files in `public/data/` (next session date, news posts, slider slides, testimonials, player entries), plus any images they reference in `public/assets/images/`, go straight to `main` with no issue, branch or PR:
    - Keep to the existing fields and format; validate the JSON before committing.
+   - Follow the templates in `CONTENT.md` (or run `/buzz`); media goes in as WebP via `tools/convert_media.py`.
+   - Bump `<lastmod>` in `public/sitemap.xml` to today in the same commit; this applies to every change to site content or info, routine or not.
    - Commit with a clear message (e.g. `Content: next session 30 Sep 2026`), push after the user confirms, then check the change on cobrasmash.org.uk once Cloudflare has deployed.
    - Anything else goes through the full loop: code, HTML/CSS/JS, new JSON fields or files, or a content change that adds personal or confidential data beyond what's already published (see `CLAUDE.md`).
 
