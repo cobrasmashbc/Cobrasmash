@@ -44,7 +44,7 @@
 },
     {
   "id": "slide-mkdba-league-7",
-  "backgroundImage": "assets/images/slider/CSvsPhoenixMay17.gif",
+  "backgroundImage": "assets/images/slider/CSvsPhoenixMay17.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
   "title": "<br>",
   "text": "<br><br>",
@@ -58,7 +58,7 @@
 },
     {
   "id": "slide-mkdba-league-6",
-  "backgroundImage": "assets/images/slider/CSvsBF_Apr26.gif",
+  "backgroundImage": "assets/images/slider/CSvsBF_Apr26.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
   "title": "<br>",
   "text": "<br><br>",
@@ -72,7 +72,7 @@
 },
 {
   "id": "slide-mkdba-league-5",
-  "backgroundImage": "assets/images/slider/vsWoughtonMar23.gif",
+  "backgroundImage": "assets/images/slider/vsWoughtonMar23.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
   "title": "<br>",
   "text": "<br><br>",
@@ -86,7 +86,7 @@
 },   
 {
   "id": "slide-mkdba-league-4",
-  "backgroundImage": "assets/images/slider/vsPhoenixMar01.gif",
+  "backgroundImage": "assets/images/slider/vsPhoenixMar01.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
   "title": "<br>",
   "text": "<br><br>",
@@ -100,7 +100,7 @@
 },
 {
   "id": "slide-mkdba-league-3",
-  "backgroundImage": "assets/images/slider/vsGreylingsFeb16.gif",
+  "backgroundImage": "assets/images/slider/vsGreylingsFeb16.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
   "title": "<br>",
   "text": "<br><br>",
@@ -115,7 +115,7 @@
 
 {
   "id": "slide-mkdba-league-2",
-  "backgroundImage": "assets/images/slider/vsHarlingtonFeb12.gif",
+  "backgroundImage": "assets/images/slider/vsHarlingtonFeb12.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
   "title": "<br>",
   "text": "<br><br>",
@@ -130,7 +130,7 @@
 
  {
   "id": "slide-mkdba-league-1",
-  "backgroundImage": "assets/images/slider/vsGreylingsFeb01.gif",
+  "backgroundImage": "assets/images/slider/vsGreylingsFeb01.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
   "title": "<br>",
   "text": "<br><br>",
@@ -144,7 +144,7 @@
 },
 {
   "id": "slide-mkdba-league",
-  "backgroundImage": "assets/images/slider/CSvsHar-Vic.gif",
+  "backgroundImage": "assets/images/slider/CSvsHar-Vic.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
   "title": "<br>",
   "text": " <br><br> ",
@@ -159,7 +159,7 @@
 ,
 {
   "id": "slide-mkdba-league-2",
-  "backgroundImage": "assets/images/slider/CSVictorySep28.gif",
+  "backgroundImage": "assets/images/slider/CSVictorySep28.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
   "title": "<br>",
   "text": "<br><br> ",
@@ -176,7 +176,7 @@
 
    {
   "id": "slide-mkdba-league",
-  "backgroundImage": "assets/images/slider/CSvsBandits-Vic-Min.gif",
+  "backgroundImage": "assets/images/slider/CSvsBandits-Vic-Min.webp",
   "backgroundColorOverlay": "rgba(0, 0, 0, 0)",
   "title": "<br>",
   "text": " <br><br> ",
