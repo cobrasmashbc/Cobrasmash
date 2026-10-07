@@ -8,6 +8,7 @@
 - **Package Manager:** None
 - **Hosting:** Cloudflare Pages (static, build output directory `public/`)
 - **CI/CD:** Cloudflare Pages native Git integration (auto-deploy on push to `main`)
+- **Search indexing:** `.github/workflows/indexnow.yml` pings IndexNow (Bing, Yandex) after a `public/**` push to `main`, once the deploy is live; key file lives at the site root and is public by protocol design
 - **Social syndication:** `worker/social-publish/`, a Cloudflare Worker (Cron Trigger + KV) that auto-posts new Latest Buzz items to Facebook and Instagram via the Meta Graph API; deployed separately from Pages via `wrangler`, not through Git integration
 
 ## Possible future additions
