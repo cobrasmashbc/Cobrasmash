@@ -1,0 +1,73 @@
+# Pings IndexNow (Bing, Yandex and other participating engines) when the live
+# site changes, so Bing re-crawls in days rather than weeks.
+#
+# The key is deliberately NOT a secret: the IndexNow protocol requires the key
+# to be publicly readable at https://cobrasmash.org.uk/<key>.txt so the engine
+# can confirm the submitter controls the domain. Rotating it means replacing
+# both the file in public/ and the value here.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+env:
+  HOST: cobrasmash.org.uk
+  INDEXNOW_KEY: edefd8fd6c719b00e20060276b7ac885
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for the Cloudflare Pages deploy to go live
+        # Pages builds from the same push, so submitting immediately would point
+        # the crawler at the previous version. Poll until the deployed sitemap
+        # carries today's date, then give the CDN a moment to settle.
+        run: |
+          for i in $(seq 1 30); do
+            if curl -fsS "https://${HOST}/sitemap.xml?cb=${GITHUB_SHA}${i}" | grep -q "$(date -u +%Y-%m-%d)"; then
+              echo "Deploy is live after ~$((i * 10))s"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "::warning::Sitemap lastmod is not today after 5 minutes; submitting anyway."
+
+      - name: Verify the key file is reachable
+        # IndexNow rejects the submission if it cannot read this file.
+        run: |
+          got=$(curl -fsS "https://${HOST}/${INDEXNOW_KEY}.txt")
+          if [ "$got" != "${INDEXNOW_KEY}" ]; then
+            echo "::error::Key file did not return the expected key."
+            exit 1
+          fi
+          echo "Key file OK."
+
+      - name: Submit the home page to IndexNow
+        run: |
+          code=$(curl -sS -o /tmp/indexnow.out -w '%{http_code}' \
+            -X POST "https://api.indexnow.org/IndexNow" \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d "{
+                  \"host\": \"${HOST}\",
+                  \"key\": \"${INDEXNOW_KEY}\",
+                  \"keyLocation\": \"https://${HOST}/${INDEXNOW_KEY}.txt\",
+                  \"urlList\": [\"https://${HOST}/\"]
+                }")
+          echo "HTTP ${code}"
+          cat /tmp/indexnow.out || true
+          # 200 = accepted, 202 = accepted, key validation pending.
+          case "$code" in
+            200|202) echo "Submitted." ;;
+            *) echo "::error::IndexNow rejected the submission (HTTP ${code})."; exit 1 ;;
+          esac

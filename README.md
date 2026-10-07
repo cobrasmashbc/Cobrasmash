@@ -16,6 +16,7 @@
 /
 ├── public/                       # Everything deployed to Cloudflare Pages (site root)
 │   ├── index.html                # Entry point of the website
+│   ├── 404.html                  # Not-found page; its presence makes Pages return a real 404
 │   ├── assets/
 │   │   ├── css/                  # Modular CSS (components, layout, responsive, typography)
 │   │   ├── js/                   # JS logic & modules (sliders, navigation, UI helpers)
@@ -26,8 +27,10 @@
 │   ├── _headers                  # Cloudflare Pages response headers (not served as a file)
 │   ├── favicon.ico               # Favicon
 │   ├── BingSiteAuth.xml          # Bing site verification
+│   ├── <key>.txt                 # IndexNow key (public by design; must match the workflow)
 │   └── browserconfig.xml         # Microsoft tile configuration
 ├── worker/social-publish/        # Cloudflare Worker: auto-posts Latest Buzz to Facebook/Instagram (deployed separately, not via Pages)
+├── .github/workflows/            # GitHub Actions: IndexNow ping on deploy (not deployed)
 ├── .claude/commands/             # Slash commands for the SDD workflow (not deployed)
 ├── spec/<issue>-<slug>/          # Plan, requirements & validation log for complex changes (not deployed)
 ├── tests/<issue>-<slug>/         # Manual test-case checklists for complex changes (not deployed)
