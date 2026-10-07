@@ -22,12 +22,16 @@
     <meta property="twitter:image" content="https://cobrasmash.org.uk/assets/images/csbs-logo.webp">
 
     <!-- Favicons & Touch Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <!-- Root .ico first and declared as rel="icon": it holds the 48x48 frame that
+         Google and Bing want for the search-result icon. The legacy
+         rel="shortcut icon" is dropped so crawlers scanning for rel="icon" see it. -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#005c6a">
-    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="#005c6a">
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#0a0a0a">
