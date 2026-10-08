@@ -8,12 +8,24 @@ How to post a match result, news item or next-session update. These are routine 
    ```bash
    python tools/convert_media.py "<poster.png or .gif>" <FileName>            # both news + slider
    python tools/convert_media.py "<poster.png>" <FileName> --news             # Latest Buzz only
+   python tools/convert_media.py "<poster.gif>" <FileName> --slider           # slider only
    ```
    - File name: `CS<Team>vs<Opponent><Mon><DD>`, e.g. `CSAvsBuckinghamASep20`, `CSBvsWoughtonDOct04`.
-   - Use the still PNG for `--news` and the animated GIF (if any) for `--slider`.
+   - **The slider is always the animation; Latest Buzz is always the still.** Same `<FileName>` for
+     both, so one post is one name in two folders. Run the tool twice when the two sources differ:
+     the still PNG with `--news`, the animation with `--slider`. Never ship a still to the slider.
    - Needs Pillow once: `python -m pip install --user pillow`.
+   - **If the animation is an MP4** (Pillow can't read video), decode it to frames first, then feed
+     those to the tool. There's no ffmpeg on PATH; CapCut ships one at
+     `%LOCALAPPDATA%/CapCut/Apps/<version>/ffmpeg.exe`:
+     ```bash
+     ffmpeg -i "<clip.mp4>" -vf "fps=24,scale=400:-1:flags=lanczos" frames/f_%04d.png
+     ```
+     Then assemble every other frame (12 fps, `duration=84`) as an animated WebP at
+     `quality=65`. Keep the slider animation around **400x400 and under ~3 MB** - it's the first
+     slide and loads eagerly, so weight here is a page-speed cost.
 2. **Add the Latest Buzz card** to `public/data/news.json` (template below). Put it **directly after** the pinned `news-next-session` card; the rest stay newest first. Only the first 6 cards show before "Show More News".
-3. **Add the slide** (optional) at the **top** of `public/data/slider.json`.
+3. **Add the slide** at the **top** of `public/data/slider.json` (skip only for a next-session change).
 4. **Bump** `<lastmod>` in `public/sitemap.xml` to today's date (`YYYY-MM-DD`).
 5. **Check** both JSON files are valid, view the page locally (`python -m http.server 8000 --directory public`), commit as `Content: <summary>`, push, and check https://cobrasmash.org.uk/.
 
@@ -36,7 +48,10 @@ IDs continue the existing sequence: `news-mkdba-league-<N>` and `slide-mkdba-lea
 - `date`: written out as `Month D, YYYY`; it drives the date badge.
 - `description` is HTML: use `<br>` for line breaks and `<strong>` for labels. Keep emojis and labels consistent with earlier posts.
 - `detailImage`: optional second image shown on the back of the card; leave `""` if none.
-- Names: use first names as they appear in `public/data/players.json` (e.g. "Steffan"). Adding anything more personal (surnames with photos, phone numbers, etc.) is not a routine update; see `CLAUDE.md`.
+- Names: use first names as they appear in `public/data/players.json` (e.g. "Steffan").
+- "The Super Six" carries the pairings when you have them - write it as the three pairs,
+  `Mark &amp; Alex, Sridhar &amp; Phyo, Imran &amp; Ram`, not a flat list and not a
+  separate "Pairings" line. With no pairing info, a flat list of the six is fine. Adding anything more personal (surnames with photos, phone numbers, etc.) is not a routine update; see `CLAUDE.md`.
 
 ## Latest Buzz: general news
 
