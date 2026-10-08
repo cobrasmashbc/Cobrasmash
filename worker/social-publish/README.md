@@ -7,6 +7,21 @@ the Meta Graph API. See the issue for the full plan and acceptance criteria.
 Deployed separately from the Pages project (`wrangler deploy`, run from this
 directory) — nothing here is served by Cloudflare Pages.
 
+## What gets posted (issue #37)
+
+An article with a `video` field (an MP4 under `public/assets/videos/`, written
+by `tools/convert_media.py --video`) is posted as a **Facebook video** and an
+**Instagram Reel**. Instagram builds video containers asynchronously, so the
+Worker polls the container's `status_code` until `FINISHED` before publishing,
+and gives up rather than publishing an unfinished container.
+
+An article without a video keeps the image path: the WebP goes to Facebook,
+and the `.jpg` twin beside it goes to Instagram, whose Content Publishing API
+accepts JPEG only.
+
+Facebook and Instagram are tracked separately in KV, so one platform failing
+never causes the other to be posted twice.
+
 ## One-time setup
 
 1. **Create the KV namespace** and paste the returned id into `id` in
@@ -23,6 +38,12 @@ directory) — nothing here is served by Cloudflare Pages.
    (`news-next-session` is excluded by the worker itself regardless, but
    including it here is harmless.)
 
+   Since #37 the Worker also keeps `posted-fb` and `posted-ig`, in the same
+   array format. They're created on first use, and anything already listed in
+   `posted-ids` counts as posted on both platforms — so there's nothing to
+   migrate. To replay one platform only, remove the id from that platform's
+   key (and from `posted-ids` if it's there).
+
 3. **Set the secrets** (a Meta Developer App on the club's Facebook Page,
    with the Instagram professional account linked to that Page, and a
    long-lived Page Access Token — never commit these):
@@ -31,6 +52,10 @@ directory) — nothing here is served by Cloudflare Pages.
    wrangler secret put FB_PAGE_ACCESS_TOKEN
    wrangler secret put IG_USER_ID
    ```
+   The token needs `pages_manage_posts` (Facebook video posts) and
+   `instagram_content_publish` (Reels) on top of the read scopes. A token
+   without them fails at the Graph API with a permissions error, which shows
+   up in the logs as `Failed to post <id> to ...`.
 
 4. **Deploy:**
    ```bash
@@ -50,7 +75,8 @@ curl "http://localhost:8787/__scheduled?cron=0+*+*+*+*"
 ```
 
 Check `wrangler tail` (or the `wrangler dev` console) for the
-`Posted <id> to Facebook and Instagram` / `Failed to post <id>` log lines.
+`Posted <id> to <platform>` / `Failed to post <id> to <platform>` log lines —
+one per platform, since each is recorded separately.
 
 ## Ad-hoc trigger against production
 

@@ -20,7 +20,8 @@
 │   ├── assets/
 │   │   ├── css/                  # Modular CSS (components, layout, responsive, typography)
 │   │   ├── js/                   # JS logic & modules (sliders, navigation, UI helpers)
-│   │   └── images/               # Optimized web images (logos, players, news, slider)
+│   │   ├── images/               # Optimized web images (logos, players, news, slider)
+│   │   └── videos/               # Match clips the social Worker posts to Facebook/Instagram
 │   ├── data/                     # JSON files powering dynamic content
 │   ├── site.webmanifest          # PWA and web app support
 │   ├── robots.txt, sitemap.xml   # SEO and web crawling configuration
@@ -37,7 +38,7 @@
 ├── mission.md, roadmap.md, techstack.md   # Project direction (not deployed)
 ├── SDD.md                        # Spec-driven development workflow (not deployed)
 ├── CONTENT.md                    # Templates for Latest Buzz and slider posts (not deployed)
-├── tools/convert_media.py        # Converts posters/animations to WebP (not deployed)
+├── tools/convert_media.py        # Converts posters to WebP, and clips to MP4 (not deployed)
 ├── CLAUDE.md                     # Guidance for Claude Code (not deployed)
 ├── LICENSE                       # License terms (not deployed)
 └── README.md                     # Project documentation
@@ -67,7 +68,7 @@
 * 📱 **Responsive Design**: mobile menu and layouts for phones and tablets.
 * ⚡ **Fast Loading**: optimized assets and lean, performant scripts.
 * 🔗 **SEO-Friendly**: social previews, structured data, sitemap and robots rules.
-* 📣 **Auto-Publish to Social**: new Latest Buzz posts are shared to Facebook and Instagram by a Cloudflare Worker (see Deployment below).
+* 📣 **Auto-Publish to Social**: new Latest Buzz posts are shared to Facebook and Instagram by a Cloudflare Worker — as a video post and a Reel when the item has a clip (see Deployment below).
 
 The full feature history is tracked as issues on the [CobraSmash project board](https://github.com/users/cobrasmashbc/projects/1).
 
@@ -103,7 +104,7 @@ Content is loaded at runtime from the `public/data/` folder:
 * `slider.json`: Hero slider images and content.
 * `testimonials-latest.json`: Member testimonials.
 
-Modular JS components like `contentLoader.js` and `heroSlider.js` fetch and display this data. To update content, edit the relevant JSON files and images; no back end is required. Templates for Latest Buzz posts, slider slides and the next session are in [`CONTENT.md`](CONTENT.md), and `tools/convert_media.py` converts posters to WebP. Bump `<lastmod>` in `public/sitemap.xml` whenever site content changes.
+Modular JS components like `contentLoader.js` and `heroSlider.js` fetch and display this data. To update content, edit the relevant JSON files and images; no back end is required. Templates for Latest Buzz posts, slider slides and the next session are in [`CONTENT.md`](CONTENT.md), and `tools/convert_media.py` converts posters to WebP and clips to MP4. Bump `<lastmod>` in `public/sitemap.xml` whenever site content changes.
 
 ---
 
@@ -115,7 +116,7 @@ The site is hosted on **Cloudflare Pages**, connected to this repo, with no buil
 * Any other pushed branch gets its own preview at `https://<branch-name>.cobrasmash.pages.dev`, with `/` in the branch name replaced by `-`. Cloudflare marks previews `noindex` so they stay out of search engines.
 * `public/_headers` sets response headers on Cloudflare: basic security headers everywhere, and `X-Robots-Tag: noindex` on `/data/` and member, news and slider photos so they stay out of search results. `robots.txt` also keeps those photos out of Google Images.
 
-The [`worker/social-publish/`](worker/social-publish/) Cloudflare Worker auto-posts new Latest Buzz items to Facebook and Instagram on an hourly Cron Trigger. It's deployed independently of Pages via `wrangler deploy` from that folder, not through Git integration; see its `README.md` for one-time KV and secrets setup.
+The [`worker/social-publish/`](worker/social-publish/) Cloudflare Worker auto-posts new Latest Buzz items to Facebook and Instagram on an hourly Cron Trigger. An item with a `video` field goes out as a Facebook video and an Instagram Reel; otherwise the still image is posted. It's deployed independently of Pages via `wrangler deploy` from that folder, not through Git integration; see its `README.md` for one-time KV and secrets setup.
 
 ---
 
@@ -141,7 +142,7 @@ See:
 © 2025 Srikanth Gedela and Cobra Smash Badminton Club. This project uses a custom license; see [`LICENSE`](LICENSE) for the full terms. In summary:
 
 * **The code** (HTML structure, CSS, JavaScript and docs) may be reused, modified and shared, **provided a visible credit is included** in your site or app (see Credits below).
-* **Club content and personal data are excluded, with all rights reserved.** Nothing here may be reused without the club's written permission: photos and graphics in `public/assets/images/`, content and member data in `public/data/`, the club's name, logo and branding, its contact details, and its written text. Replace all of it with your own.
+* **Club content and personal data are excluded, with all rights reserved.** Nothing here may be reused without the club's written permission: photos and graphics in `public/assets/images/`, video in `public/assets/videos/`, content and member data in `public/data/`, the club's name, logo and branding, its contact details, and its written text. Replace all of it with your own.
 
 ---
 

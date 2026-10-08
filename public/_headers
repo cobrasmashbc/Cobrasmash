@@ -20,3 +20,8 @@
 
 /assets/images/slider/*
   X-Robots-Tag: noindex
+
+# Match clips the social Worker posts to Facebook and Instagram: Meta fetches
+# them from here, but they shouldn't be indexed as site content
+/assets/videos/*
+  X-Robots-Tag: noindex

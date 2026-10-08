@@ -43,7 +43,8 @@ permission from Cobra Smash Badminton Club:
 
 1. All images and graphics, including everything in public/assets/images/
    (player photos, match and event graphics, the club logo and all icons and
-   favicons derived from it).
+   favicons derived from it), and all video, including everything in
+   public/assets/videos/ (match and event clips).
 
 2. All content data, including everything in public/data/ (player names,
    nicknames, roles and photo references, testimonials, news and slider

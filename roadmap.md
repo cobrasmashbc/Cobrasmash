@@ -9,6 +9,7 @@
 **Phase 1: Content & Social Syndication (Next)**
 - [ ] Implement Markdown/CMS-based Blog architecture.
 - [x] Integrate Meta Graph API (or Zapier/Make) to auto-publish "Latest Buzz" to Facebook and Instagram.
+- [x] Post the animated poster as a Facebook video and an Instagram Reel, not a flat still (#37).
 
 **Phase 2: Club Operations**
 - [ ] Build player registration workflows for club nights.
