@@ -4,17 +4,20 @@ How to post a match result, news item or next-session update. These are routine 
 
 ## Checklist
 
-1. **Convert the media** to WebP (never commit PNG/GIF/JPG for new posts):
+1. **Convert the media** (never commit PNG/GIF/JPG as site imagery):
    ```bash
    python tools/convert_media.py "<poster.png or .gif>" <FileName>            # both news + slider
    python tools/convert_media.py "<poster.png>" <FileName> --news             # Latest Buzz only
    python tools/convert_media.py "<poster.gif>" <FileName> --slider           # slider only
+   python tools/convert_media.py "<clip.mp4>"   <FileName> --video            # for Facebook/Instagram
    ```
    - File name: `CS<Team>vs<Opponent><Mon><DD>`, e.g. `CSAvsBuckinghamASep20`, `CSBvsWoughtonDOct04`.
    - **The slider is always the animation; Latest Buzz is always the still.** Same `<FileName>` for
      both, so one post is one name in two folders. Run the tool twice when the two sources differ:
      the still PNG with `--news`, the animation with `--slider`. Never ship a still to the slider.
    - Needs Pillow once: `python -m pip install --user pillow`.
+   - `--news` also writes `<FileName>.jpg` next to the WebP. That is not for the site - it is
+     what the social Worker gives Instagram, whose API rejects WebP.
    - **If the animation is an MP4** (Pillow can't read video), decode it to frames first, then feed
      those to the tool. There's no ffmpeg on PATH; CapCut ships one at
      `%LOCALAPPDATA%/CapCut/Apps/<version>/ffmpeg.exe`:
@@ -24,8 +27,15 @@ How to post a match result, news item or next-session update. These are routine 
      Then assemble every other frame (12 fps, `duration=84`) as an animated WebP at
      `quality=65`. Keep the slider animation around **400x400 and under ~3 MB** - it's the first
      slide and loads eagerly, so weight here is a page-speed cost.
+   - **If there is a clip, also run `--video`.** It writes `public/assets/videos/<FileName>.mp4`
+     for the social Worker, which posts it as a Facebook video and an Instagram Reel - neither
+     platform animates a WebP, so without this they get the flat still. The tool finds CapCut's
+     ffmpeg itself, copies the video stream when it is already H.264, adds a silent AAC track and
+     moves the moov atom to the front, all of which Meta requires.
 2. **Add the Latest Buzz card** to `public/data/news.json` (template below). Put it **directly after** the pinned `news-next-session` card; the rest stay newest first. Only the first 6 cards show before "Show More News".
 3. **Add the slide** at the **top** of `public/data/slider.json` (skip only for a next-session change).
+   With a clip, add `"video": "assets/videos/<FileName>.mp4"` to the Latest Buzz card too - the
+   site ignores it, the social Worker posts it.
 4. **Bump** `<lastmod>` in `public/sitemap.xml` to today's date (`YYYY-MM-DD`).
 5. **Check** both JSON files are valid, view the page locally (`python -m http.server 8000 --directory public`), commit as `Content: <summary>`, push, and check https://cobrasmash.org.uk/.
 
