@@ -89,15 +89,20 @@ footer {
     margin: 0; 
 }
 
+/* Underlined rather than bare: these sit inside the copyright sentence and
+   share its colour, so without this they read as plain text — and on a touch
+   screen there is no hover to reveal them. */
 .footer-bottom a { 
-    color: var(--color-text-medium); 
-    text-decoration: none; 
+    color: var(--color-text-light); 
+    text-decoration: underline; 
+    text-underline-offset: 3px; 
     padding: 0 0.5rem; 
     transition: color 0.3s ease; 
 }
 
-.footer-bottom a:hover { 
-    color: var(--color-white); 
+.footer-bottom a:hover,
+.footer-bottom a:focus-visible { 
+    color: var(--color-cobra-yellow); 
 }
 
 
