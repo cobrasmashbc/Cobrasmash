@@ -182,6 +182,14 @@ async function run(env) {
     );
     if (pending.length === 0) continue;
 
+    // Posting is opt-in: an article is held until someone has seen it on the
+    // live site and added "social": true. Checked after the pending filter so
+    // this only logs for articles that would otherwise go out now.
+    if (article.social !== true) {
+      console.log(`Holding ${article.id}: add "social": true to post it`);
+      continue;
+    }
+
     const media = resolveMedia(article);
     if (!media.videoUrl && !media.imageUrl) {
       console.warn(`Skipping ${article.id}: no media to post`);

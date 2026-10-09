@@ -7,7 +7,15 @@ the Meta Graph API. See the issue for the full plan and acceptance criteria.
 Deployed separately from the Pages project (`wrangler deploy`, run from this
 directory) — nothing here is served by Cloudflare Pages.
 
-## What gets posted (issue #37)
+## What gets posted
+
+**Posting is opt-in (issue #40).** An article is only published once it carries
+`"social": true` in `news.json`. Anything else is held, and logged each run as
+`Holding <id>: add "social": true to post it`. That's the gate for checking a
+post on the live site before it reaches anyone: add the Buzz item, look at it on
+cobrasmash.org.uk, then flip the flag in a second commit.
+
+### Media (issue #37)
 
 An article with a `video` field (an MP4 under `public/assets/videos/`, written
 by `tools/convert_media.py --video`) is posted as a **Facebook video** and an
