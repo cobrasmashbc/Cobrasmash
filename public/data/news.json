@@ -11,15 +11,6 @@
   "expandable": true
 },
 {
-  "id": "news-hsbc-club-account",
-  "title": "Session Payments, Sorted: Our Charitable Club Account Is Live 🏦",
-  "date": "September 30, 2026",
-  "image": "assets/images/news/HSBCClubAccountOct09.webp",
-  "detailImage": "",
-  "description": "🏦 <strong>Session payments, sorted — our charitable club account is live!</strong> 🐍<br><br>We now have our own <strong>HSBC UK Charitable Bank Account</strong>, a dedicated account in the club's name, and from <strong>30 September 2026</strong> session payments work on a simple hybrid model:<br><br>✅ <strong>Members:</strong> pay your share of the court cost only. Shuttles are already covered by the <strong>£40</strong> annual subscription, which mainly pays for our feather shuttlecocks and is reviewed at regular intervals.<br><br>🏸 <strong>Guests:</strong> pay your share of the court cost, plus a flat <strong>£3</strong> for shuttles.<br><br>📊 <strong>Leagues:</strong> league costs stay separate, shared only among the players in that league.<br><br>This keeps session payments easier to manage while keeping things fair for everyone. 💪<br><br>📎 <strong>Want the detail?</strong> The full breakdown is in the <a href='#faq'>FAQ</a>, and you can read about the account type <a href='https://www.business.hsbc.uk/en-gb/products/charity-banking-community-account' target='_blank' rel='noopener'>here</a>. Account details are never published online — the Cobra Council shares them with you directly.",
-  "expandable": true
-},
-{
   "id": "news-mkdba-league-12",
   "title": "Pressure Hit, Cobras Hit Back: 5–4 Away Win vs Harlington A 🏸🔥",
   "date": "October 8, 2026",
@@ -27,6 +18,15 @@
   "detailImage": "",
   "video": "assets/videos/CSBvsHarlingtonAOct08.mp4",
   "description": "<strong>🔥 Pressure Hit. Cobras Hit Back: a 5–4 away win at MKDBA League 2026–27!</strong> <br> <br> <strong>🐍 Team:</strong> Cobra Smash B <br>  <strong>📅 Match Day:</strong> Thursday, Oct 8 <br>  <strong>🔥 Opponent:</strong> Harlington A <br>  <strong>👑 Captain:</strong> Ram <br>  <strong>✅ The Super Six:</strong> Mark &amp; Alex, Sridhar &amp; Phyo, Imran &amp; Ram <br>  <strong>📍 Battleground🏸:</strong> Alameda Middle School Sports Hall, Ampthill (Away) @ 8:30PM  <br> <br> <strong>🎯 RESULT:</strong> 5–4 win — the pressure came, the Cobras hit back! 🔥",
+  "expandable": true
+},
+{
+  "id": "news-hsbc-club-account",
+  "title": "Session Payments, Sorted: Our Charitable Club Account Is Live 🏦",
+  "date": "September 30, 2026",
+  "image": "assets/images/news/HSBCClubAccountOct09.webp",
+  "detailImage": "",
+  "description": "🏦 <strong>Session payments, sorted! Our charitable club account is live.</strong> 🐍<br><br>We now have our own <strong>HSBC UK Charitable Bank Account</strong>, a dedicated account in the club's name, and from <strong>30 September 2026</strong> session payments work on a simple hybrid model:<br><br>✅ <strong>Members:</strong> pay your share of the court cost only. Shuttles are already covered by the <strong>£40</strong> annual subscription, which mainly pays for our feather shuttlecocks and is reviewed at regular intervals.<br><br>🏸 <strong>Guests:</strong> pay your share of the court cost, plus a flat <strong>£3</strong> for shuttles.<br><br>📊 <strong>Leagues:</strong> league costs stay separate, shared only among the players in that league.<br><br>This keeps session payments easier to manage while keeping things fair for everyone. 💪<br><br>📎 <strong>Want the detail?</strong> The full breakdown is in the <a href='#faq'>FAQ</a>, and you can read about the account type <a href='https://www.business.hsbc.uk/en-gb/products/charity-banking-community-account' target='_blank' rel='noopener'>here</a>. Account details are never published online. The Cobra Council shares them with you directly.",
   "expandable": true
 },
 {
