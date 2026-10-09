@@ -33,11 +33,17 @@ How to post a match result, news item or next-session update. These are routine 
      ffmpeg itself, copies the video stream when it is already H.264, adds a silent AAC track and
      moves the moov atom to the front, all of which Meta requires.
 2. **Add the Latest Buzz card** to `public/data/news.json` (template below). Put it **directly after** the pinned `news-next-session` card; the rest stay newest first. Only the first 6 cards show before "Show More News".
+   Leave `"social"` off for now - the card goes live on the site, but nothing is posted to
+   Facebook or Instagram until you approve it in step 6.
 3. **Add the slide** at the **top** of `public/data/slider.json` (skip only for a next-session change).
    With a clip, add `"video": "assets/videos/<FileName>.mp4"` to the Latest Buzz card too - the
    site ignores it, the social Worker posts it.
 4. **Bump** `<lastmod>` in `public/sitemap.xml` to today's date (`YYYY-MM-DD`).
 5. **Check** both JSON files are valid, view the page locally (`python -m http.server 8000 --directory public`), commit as `Content: <summary>`, push, and check https://cobrasmash.org.uk/.
+6. **Approve it for social.** Once the post looks right on the live site, add `"social": true` to
+   the card and push that one-line change. The Worker picks it up within the hour and posts to
+   Facebook and Instagram. Until then it logs `Holding <id>` and sends nothing - so a post you
+   are not happy with never reaches anyone.
 
 IDs continue the existing sequence: `news-mkdba-league-<N>` and `slide-mkdba-league-<N>` (next number after the highest one in the file).
 
@@ -50,10 +56,15 @@ IDs continue the existing sequence: `news-mkdba-league-<N>` and `slide-mkdba-lea
   "date": "October 4, 2026",
   "image": "assets/images/news/<FileName>.webp",
   "detailImage": "",
-  "description": "<strong>🔥 <Headline>: <score summary> at MKDBA League 2026–27!</strong> <br> <br> <strong>🐍 Team:</strong> Cobra Smash <A/B> <br>  <strong>📅 Match Day:</strong> <Weekday>, <Mon DD> <br>  <strong>🔥 Opponent:</strong> <Opponent> <br>  <strong>👑 Captain:</strong> <Name> <br>  <strong>✅ The Super Six:</strong> <Name>, <Name>, <Name>, <Name>, <Name>, <Name> <br>  <strong>📍 Battleground🏸:</strong> <Venue> (<Home/Away>) @ <H:MM>PM  <br> <br> <strong>🎯 RESULT:</strong> <score and one-line summary>",
-  "expandable": true
+  "description": "<strong>🔥 <Headline>: <score summary> at MKDBA League 2026–27!</strong> <br> <br> <strong>🐍 Team:</strong> Cobra Smash <A/B> <br>  <strong>📅 Match Day:</strong> <Weekday>, <Mon DD> <br>  <strong>🔥 Opponent:</strong> <Opponent> <br>  <strong>👑 Captain:</strong> <Name> <br>  <strong>✅ The Super Six:</strong> <Name> &amp; <Name>, <Name> &amp; <Name>, <Name> &amp; <Name> <br>  <strong>📍 Battleground🏸:</strong> <Venue> (<Home/Away>) @ <H:MM>PM  <br> <br> <strong>🎯 RESULT:</strong> <score and one-line summary>",
+  "video": "assets/videos/<FileName>.mp4",
+  "expandable": true,
+  "social": true
 },
 ```
+
+- `video` and `social` are read only by the social Worker, never by the site. `video` is optional;
+  without `"social": true` nothing is posted at all.
 
 - `date`: written out as `Month D, YYYY`; it drives the date badge.
 - `description` is HTML: use `<br>` for line breaks and `<strong>` for labels. Keep emojis and labels consistent with earlier posts.
@@ -75,7 +86,8 @@ Same fields; the description is free-form HTML:
   "image": "assets/images/news/<FileName>.webp",
   "detailImage": "",
   "description": "<strong>⚡ <Lead line></strong><br><br><Body text with <br><br> between paragraphs>",
-  "expandable": true
+  "expandable": true,
+  "social": true
 },
 ```
 
