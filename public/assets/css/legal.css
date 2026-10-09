@@ -1,0 +1,142 @@
+/* Styles for the standalone legal pages (/privacy/, /terms/).
+
+   Deliberately not part of main.css: these pages must render correctly with no
+   JavaScript, and main.css expects JS to set --current-header-height. Colour and
+   font tokens are the same values as _base.css, repeated here so the pages are
+   self-contained — the same approach 404.html takes. */
+
+:root {
+    --color-black-base: #0A0A0A;
+    --color-black-soft: #141414;
+    --color-cobra-yellow: #FFC107;
+    --color-tagline-orange-yellow: #FFAE00;
+    --color-text-light: #EAEAEA;
+    --color-text-medium: #cccccc;
+    --font-primary: 'Oswald', Impact, sans-serif;
+    --font-body: 'Roboto', Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    background-color: var(--color-black-base);
+    color: var(--color-text-light);
+    padding: 2rem 1rem 4rem;
+}
+
+.page {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.masthead {
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 2.5rem;
+}
+
+.masthead img {
+    width: 120px;
+    height: auto;
+}
+
+h1 {
+    font-family: var(--font-primary);
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    color: var(--color-cobra-yellow);
+}
+
+.updated {
+    color: var(--color-text-medium);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+h2 {
+    font-family: var(--font-primary);
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 2.5rem 0 0.75rem;
+    color: var(--color-cobra-yellow);
+}
+
+h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem;
+}
+
+p, li { color: var(--color-text-medium); }
+
+p { margin-bottom: 1rem; }
+
+ul, ol {
+    margin: 0 0 1rem 1.25rem;
+}
+
+li { margin-bottom: 0.5rem; }
+
+a {
+    color: var(--color-cobra-yellow);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a:hover, a:focus-visible { color: var(--color-tagline-orange-yellow); }
+
+.callout {
+    background-color: var(--color-black-soft);
+    border-left: 3px solid var(--color-cobra-yellow);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.callout p:last-child { margin-bottom: 0; }
+
+.page-footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--color-black-base);
+    background-color: var(--color-cobra-yellow);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover, .btn:focus-visible {
+    background-color: var(--color-tagline-orange-yellow);
+    color: var(--color-black-base);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn { transition: none; }
+    .btn:hover, .btn:focus-visible { transform: none; }
+}
