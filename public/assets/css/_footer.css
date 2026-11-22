@@ -100,6 +100,10 @@ footer {
     transition: color 0.3s ease; 
 }
 
+/* MerQify credit: a quieter second line under the copyright. */
+.footer-bottom .footer-credit { margin-top: 0.75rem; font-size: 0.8rem; letter-spacing: 0.02em; }
+.footer-bottom .footer-credit a { padding: 0.25rem 0.5rem; }
+
 .footer-bottom a:hover,
 .footer-bottom a:focus-visible { 
     color: var(--color-cobra-yellow); 
