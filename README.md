@@ -79,7 +79,7 @@ The full feature history is tracked as issues on the [CobraSmash project board](
 Clone this repo:
 
 ```bash
-git clone https://github.com/cobrasmashbc/Cobrasmash.git
+git clone https://github.com/MerQify/cobrasmash.git
 cd Cobrasmash
 ```
 
