@@ -37,6 +37,8 @@
 
 7. **Branch retention.** Tier 1 has no branch. Tier 2 branches are deleted (local and remote) once the PR merges, same as today. Tier 3 branches are kept after merge — don't pass `--delete-branch` to `gh pr merge` and don't delete the local branch — so reverting is a checkout or `git revert` away, not an archaeology exercise.
 
+8. **Branches and environments.** `main` is production (cobrasmash.org.uk). `staging` is the long-lived check environment (staging.cobrasmash.org.uk), built by Cloudflare Pages with the project's **Preview** settings and secrets; no other branch gets a preview. Tier 2 and 3 work goes `feature/<name>` → `staging` by PR (squash), is checked on staging, then `staging` → `main` by a second PR merged as a **merge commit** (never squash a promotion, and never delete `staging`). Tier 1 content updates keep going straight to `main`; after one, bring `staging` up to date with `main` before starting the next feature, so promotions don't drag content backwards.
+
 ---
 
 ## Command loop
@@ -56,17 +58,17 @@ Run only the step requested. Don't skip or combine steps unless directed. Each s
 - **Output:** Tier 2 — exactly 3 bullets defining completion. Tier 3 — as many bullets as needed, plus a matching manual test-case checklist.
 
 ### 4. `/build`
-- **Action:** create the working branch (`git checkout -b feature/<name>`); for Tier 3, write `spec/<issue>-<slug>/plan.md` and `requirements.md` (from `/propose` and `/spec`'s output) and `tests/<issue>-<slug>/test-cases.md` before implementing; then implement the spec.
+- **Action:** create the working branch from an up-to-date `staging` (`git checkout -b feature/<name> origin/staging`); for Tier 3, write `spec/<issue>-<slug>/plan.md` and `requirements.md` (from `/propose` and `/spec`'s output) and `tests/<issue>-<slug>/test-cases.md` before implementing; then implement the spec.
 - **Output:** the changes made, listed by file path.
 
 ### 5. `/validate`
 - **Action:** verify the change. Tier 2 — check each acceptance criterion directly. Tier 3 — run every case in `tests/<issue>-<slug>/test-cases.md` and record the results.
-- **Output:** local check commands (`python -m http.server 8000 --directory public`, then the pages and JSON files affected), pass/fail per case, and what to check on the Cloudflare Pages preview URL for the branch. Tier 3 also writes the run log to `spec/<issue>-<slug>/validation.md`.
+- **Output:** local check commands (`python -m http.server 8000 --directory public`, then the pages and JSON files affected), pass/fail per case, and what to check on staging.cobrasmash.org.uk once the change is merged to `staging`. Tier 3 also writes the run log to `spec/<issue>-<slug>/validation.md`.
 
 ### 6. `/document`
 - **Action:** update docs to reflect the change.
 - **Output:** updates to `README.md`, `roadmap.md` and, where relevant, `CLAUDE.md` / `techstack.md`.
 
 ### 7. `/ship`
-- **Action:** commit (including any `spec/`/`tests/` files), push, open a PR, merge, and update the board. Delete the branch after merge for Tier 2; keep it for Tier 3 (rule 7).
+- **Action:** commit (including any `spec/`/`tests/` files), push, open a PR into `staging`, merge it, check the change on staging, then open and merge the `staging` → `main` promotion PR (merge commit), and update the board. Delete the branch after merge for Tier 2; keep it for Tier 3 (rule 7).
 - **Output:** exact `git` / `gh` commands and the board transition (issue to `Done`); run after the user confirms.
