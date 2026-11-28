@@ -7,6 +7,16 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
+# Only https://cobrasmash.org.uk/ is the real site. Staging and the project's
+# own pages.dev address serve full copies, so keep them out of search.
+# (Branch and per-deploy *.cobrasmash-site.pages.dev previews get noindex from
+# Cloudflare automatically.)
+https://staging.cobrasmash.org.uk/*
+  X-Robots-Tag: noindex
+
+https://cobrasmash-site.pages.dev/*
+  X-Robots-Tag: noindex
+
 # Content data: search engines may fetch it to render the page, but not list it
 /data/*
   X-Robots-Tag: noindex

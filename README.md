@@ -112,8 +112,11 @@ Modular JS components like `contentLoader.js` and `heroSlider.js` fetch and disp
 
 The site is hosted on **Cloudflare Pages**, connected to this repo, with no build command and `public` as the output directory.
 
+The Pages project is `cobrasmash-site` on the club's Cloudflare account.
+
 * A push to `main` goes live on [cobrasmash.org.uk](https://cobrasmash.org.uk/).
-* Any other pushed branch gets its own preview at `https://<branch-name>.cobrasmash.pages.dev`, with `/` in the branch name replaced by `-`. Cloudflare marks previews `noindex` so they stay out of search engines.
+* A push to `staging` deploys to [staging.cobrasmash.org.uk](https://staging.cobrasmash.org.uk/), where changes are checked before they go live. It uses the project's **Preview** settings and secrets, so staging has its own keys (for example a separate `RESEND_API_KEY`). Other branches don't get previews.
+* Staging and `cobrasmash-site.pages.dev` send `X-Robots-Tag: noindex`, and every page names `https://cobrasmash.org.uk/` as its canonical address, so search engines only list the real site.
 * `public/_headers` sets response headers on Cloudflare: basic security headers everywhere, and `X-Robots-Tag: noindex` on `/data/` and member, news and slider photos so they stay out of search results. `robots.txt` also keeps those photos out of Google Images.
 
 The [`worker/social-publish/`](worker/social-publish/) Cloudflare Worker auto-posts new Latest Buzz items to Facebook and Instagram on an hourly Cron Trigger. An item with a `video` field goes out as a Facebook video and an Instagram Reel; otherwise the still image is posted. It's deployed independently of Pages via `wrangler deploy` from that folder, not through Git integration; see its `README.md` for one-time KV and secrets setup.
@@ -126,8 +129,8 @@ Changes follow an issue-driven, spec-driven workflow, sized to the change:
 
 1. Every change starts as an issue on the [CobraSmash project board](https://github.com/users/cobrasmashbc/projects/1), except routine content updates, which go straight to `main`.
 2. Simple changes get a lightweight 3-bullet spec inline in the issue/PR; complex changes get full `plan.md` / `requirements.md` / `validation.md` under `spec/` and a manual test-case checklist under `tests/`, kept permanently as an audit trail.
-3. Work happens on a `feature/<name>` branch and is checked on its Cloudflare Pages preview. Simple-change branches are deleted after merge; complex-change branches are kept, so a revert is always available.
-4. It's merged to `main` through a pull request, which deploys it.
+3. Work happens on a `feature/<name>` branch. Simple-change branches are deleted after merge; complex-change branches are kept, so a revert is always available.
+4. It's merged to `staging` through a pull request and checked on staging.cobrasmash.org.uk, then promoted to `main` with a second pull request (`staging` → `main`, a merge commit), which deploys it.
 
 See:
 
