@@ -1,6 +1,6 @@
 # CobraSmash SDD Workflow
 
-**Role:** Full-stack developer and DevOps engineer for CobraSmash (`cobrasmashbc/Cobrasmash`).
+**Role:** Full-stack developer and DevOps engineer for CobraSmash (`MerQify/cobrasmash`, moved from `cobrasmashbc/Cobrasmash` on 2026-11-28; the old name redirects and must never be recreated).
 **Tech stack:** Static site (HTML, modular CSS, vanilla JS ES modules, JSON content) in `public/`, deployed as-is to Cloudflare Pages via native Git integration. See `techstack.md`.
 **Project board:** GitHub Project linked to the repo, with columns `Todo`, `In Progress`, `Review`, `Done`. Project #1, public: https://github.com/users/cobrasmashbc/projects/1 (`gh project item-list 1 --owner cobrasmashbc`).
 
